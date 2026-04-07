@@ -58,8 +58,8 @@ export const windows: WindowItem[] = [
   // External links with Unsplash images
   { id: "window-swap", title: "Random Window Swap", subtitle: "Global Community Portal", externalUrl: "https://www.window-swap.com/window", thumbnailUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=320&h=180&fit=crop" },
   { id: "drive-listen", title: "City Drive & Radio", subtitle: "Immersive City Streets", externalUrl: "https://driveandlisten.app/", thumbnailUrl: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=320&h=180&fit=crop" },
-  { id: "walking-tour", title: "Virtual Walking Tour", subtitle: "100+ Cities & Locations", externalUrl: "https://virtualvacation.us/walking-tour", thumbnailUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=320&h=180&fit=crop" },
-  { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/flyover", thumbnailUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=320&h=180&fit=crop" },
+  { id: "walking-tour", title: "Virtual Walking Tour", subtitle: "100+ Cities & Locations", externalUrl: "https://virtualvacation.us/walk", thumbnailUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=320&h=180&fit=crop" },
+  { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/fly", thumbnailUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=320&h=180&fit=crop" },
 ]
 
 // Get YouTube thumbnail URL
