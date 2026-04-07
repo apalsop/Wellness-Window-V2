@@ -10,33 +10,47 @@ interface AudioSource {
   id: AudioType
   label: string
   icon: React.ReactNode
-  url: string
+  // Using multiple fallback URLs for reliability
+  urls: string[]
 }
 
+// Using reliable free audio sources - multiple fallbacks per sound
 const audioSources: AudioSource[] = [
   {
     id: "rain",
     label: "RAIN",
     icon: <CloudRain className="h-4 w-4" />,
-    url: "https://cdn.pixabay.com/audio/2022/05/16/audio_1fc75b5261.mp3",
+    urls: [
+      "https://sounds.pond5.com/rain-forest-sound-effect-049568668_nw_preview.m4a",
+      "https://freesound.org/data/previews/531/531947_5828667-lq.mp3",
+    ],
   },
   {
     id: "waves",
     label: "WAVES",
     icon: <Waves className="h-4 w-4" />,
-    url: "https://cdn.pixabay.com/audio/2024/07/30/audio_ac440445a6.mp3",
+    urls: [
+      "https://sounds.pond5.com/ocean-waves-sound-effect-059498516_nw_preview.m4a",
+      "https://freesound.org/data/previews/467/467919_8407711-lq.mp3",
+    ],
   },
   {
     id: "forest",
     label: "FOREST",
     icon: <TreePine className="h-4 w-4" />,
-    url: "https://cdn.pixabay.com/audio/2022/03/12/audio_4c26ed1d2a.mp3",
+    urls: [
+      "https://sounds.pond5.com/forest-birds-ambience-sound-effect-029587932_nw_preview.m4a",
+      "https://freesound.org/data/previews/525/525208_36001-lq.mp3",
+    ],
   },
   {
     id: "lofi",
     label: "LO-FI",
     icon: <Music className="h-4 w-4" />,
-    url: "https://cdn.pixabay.com/audio/2022/11/08/audio_d87c3ddc95.mp3",
+    urls: [
+      "https://sounds.pond5.com/lofi-hip-hop-beat-royalty-free-music-100085692_nw_preview.m4a",
+      "https://freesound.org/data/previews/612/612095_5674468-lq.mp3",
+    ],
   },
 ]
 
@@ -44,6 +58,7 @@ export function AudioMixer() {
   const [activeAudio, setActiveAudio] = useState<AudioType>(null)
   const [volume, setVolume] = useState(0.5)
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   const stopAudio = useCallback(() => {
@@ -54,37 +69,81 @@ export function AudioMixer() {
     }
     setActiveAudio(null)
     setIsLoading(false)
+    setError(null)
   }, [])
 
-  const playAudio = useCallback((source: AudioSource) => {
-    if (audioRef.current) {
-      audioRef.current.pause()
-      audioRef.current.currentTime = 0
+  const tryPlayAudio = useCallback(async (urls: string[], index: number = 0): Promise<HTMLAudioElement | null> => {
+    if (index >= urls.length) {
+      return null
     }
 
+    return new Promise((resolve) => {
+      const audio = new Audio()
+      audio.crossOrigin = "anonymous"
+      
+      const handleCanPlay = () => {
+        cleanup()
+        resolve(audio)
+      }
+      
+      const handleError = () => {
+        cleanup()
+        // Try next URL
+        tryPlayAudio(urls, index + 1).then(resolve)
+      }
+      
+      const cleanup = () => {
+        audio.removeEventListener("canplaythrough", handleCanPlay)
+        audio.removeEventListener("error", handleError)
+      }
+      
+      audio.addEventListener("canplaythrough", handleCanPlay)
+      audio.addEventListener("error", handleError)
+      
+      audio.src = urls[index]
+      audio.load()
+    })
+  }, [])
+
+  const playAudio = useCallback(async (source: AudioSource) => {
+    // If same audio is playing, stop it
     if (activeAudio === source.id) {
       stopAudio()
       return
     }
 
+    // Stop any current audio
+    if (audioRef.current) {
+      audioRef.current.pause()
+      audioRef.current = null
+    }
+
     setIsLoading(true)
-    const audio = new Audio(source.url)
-    audio.loop = true
-    audio.volume = volume
-    audioRef.current = audio
-
-    audio.addEventListener("canplaythrough", () => {
-      setIsLoading(false)
-      audio.play().catch(console.error)
-    })
-
-    audio.addEventListener("error", () => {
-      setIsLoading(false)
-      console.error("Failed to load audio:", source.label)
-    })
-
+    setError(null)
     setActiveAudio(source.id)
-  }, [activeAudio, volume, stopAudio])
+
+    try {
+      const audio = await tryPlayAudio(source.urls)
+      
+      if (audio) {
+        audio.loop = true
+        audio.volume = volume
+        audioRef.current = audio
+        
+        await audio.play()
+        setIsLoading(false)
+      } else {
+        setError("Unable to load audio")
+        setIsLoading(false)
+        setActiveAudio(null)
+      }
+    } catch (err) {
+      console.error("Audio playback error:", err)
+      setError("Click to retry")
+      setIsLoading(false)
+      setActiveAudio(null)
+    }
+  }, [activeAudio, volume, stopAudio, tryPlayAudio])
 
   useEffect(() => {
     if (audioRef.current) {
@@ -92,6 +151,7 @@ export function AudioMixer() {
     }
   }, [volume])
 
+  // Cleanup on unmount
   useEffect(() => {
     return () => {
       if (audioRef.current) {
@@ -104,21 +164,22 @@ export function AudioMixer() {
   return (
     <div className="bg-card border border-border rounded-lg p-4">
       {/* Audio buttons centered and evenly spaced */}
-      <div className="flex items-center justify-center gap-2 sm:gap-4 flex-wrap">
+      <div className="flex items-center justify-center gap-3 sm:gap-4">
         {audioSources.map((source) => (
           <button
             key={source.id}
             onClick={() => playAudio(source)}
             disabled={isLoading && activeAudio !== source.id}
             className={cn(
-              "audio-btn flex items-center gap-2 flex-1 justify-center min-w-[80px] max-w-[120px]",
-              activeAudio === source.id && "active"
+              "audio-btn flex items-center justify-center gap-2 flex-1 min-w-0 px-3 py-2.5",
+              activeAudio === source.id && "active",
+              isLoading && activeAudio === source.id && "animate-pulse"
             )}
           >
-            <span className={cn(activeAudio === source.id && "animate-pulse")}>
+            <span className="shrink-0">
               {source.icon}
             </span>
-            <span>{source.label}</span>
+            <span className="hidden sm:inline text-sm font-medium">{source.label}</span>
           </button>
         ))}
         
@@ -126,28 +187,35 @@ export function AudioMixer() {
         <button
           onClick={stopAudio}
           className={cn(
-            "audio-btn flex items-center gap-2 flex-1 justify-center min-w-[80px] max-w-[120px]",
-            activeAudio === null ? "opacity-50" : "hover:border-destructive hover:text-destructive"
+            "audio-btn flex items-center justify-center gap-2 flex-1 min-w-0 px-3 py-2.5",
+            activeAudio === null ? "opacity-50 cursor-default" : "hover:border-destructive hover:text-destructive"
           )}
+          disabled={activeAudio === null}
         >
-          <VolumeX className="h-4 w-4" />
-          <span>OFF</span>
+          <VolumeX className="h-4 w-4 shrink-0" />
+          <span className="hidden sm:inline text-sm font-medium">OFF</span>
         </button>
       </div>
 
+      {/* Error message */}
+      {error && (
+        <p className="text-xs text-destructive text-center mt-2">{error}</p>
+      )}
+
       {/* Volume Slider - shown below when audio is active */}
-      {activeAudio && (
+      {activeAudio && !isLoading && (
         <div className="flex items-center justify-center gap-3 mt-4 pt-4 border-t border-border">
-          <Volume2 className="h-4 w-4 text-muted-foreground" />
+          <Volume2 className="h-4 w-4 text-muted-foreground shrink-0" />
           <input
             type="range"
             min="0"
             max="1"
-            step="0.1"
+            step="0.05"
             value={volume}
             onChange={(e) => setVolume(parseFloat(e.target.value))}
-            className="w-32 h-1.5 bg-muted rounded-full appearance-none cursor-pointer accent-primary"
+            className="w-32 sm:w-48 h-2 bg-muted rounded-full appearance-none cursor-pointer accent-primary"
           />
+          <span className="text-xs text-muted-foreground w-8">{Math.round(volume * 100)}%</span>
         </div>
       )}
     </div>
