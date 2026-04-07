@@ -40,13 +40,13 @@ export const windows: WindowItem[] = [
   { id: "fireplace", title: "Cozy Fireplace", subtitle: "Relaxing Ambiance", videoId: "L_LUpnjgPso" },
   // Autumn Forest - original working ID
   { id: "autumn-forest", title: "Autumn Forest", subtitle: "Nature Relaxation", videoId: "xNN7iTA57jM" },
-  // Redwood Forest - original working ID  
-  { id: "redwood", title: "Redwood Forest", subtitle: "Pacific Coast", videoId: "qCYKd9JR3wk" },
-  // External links - no thumbnails, use gradient backgrounds
-  { id: "window-swap", title: "Random Window Swap", subtitle: "Global Community Portal", externalUrl: "https://www.window-swap.com/window" },
-  { id: "drive-listen", title: "City Drive & Radio", subtitle: "Immersive City Streets", externalUrl: "https://driveandlisten.app/" },
-  { id: "walking-tour", title: "Virtual Walking Tour", subtitle: "100+ Cities & Locations", externalUrl: "https://virtualvacation.us/walking-tour" },
-  { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/flyover" },
+  // Redwood Forest - working video  
+  { id: "redwood", title: "Redwood Forest", subtitle: "Pacific Coast", videoId: "euN1PqLwrX4" },
+  // External links with placeholder images from Unsplash
+  { id: "window-swap", title: "Random Window Swap", subtitle: "Global Community Portal", externalUrl: "https://www.window-swap.com/window", thumbnailUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=320&h=180&fit=crop" },
+  { id: "drive-listen", title: "City Drive & Radio", subtitle: "Immersive City Streets", externalUrl: "https://driveandlisten.app/", thumbnailUrl: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=320&h=180&fit=crop" },
+  { id: "walking-tour", title: "Virtual Walking Tour", subtitle: "100+ Cities & Locations", externalUrl: "https://virtualvacation.us/walking-tour", thumbnailUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=320&h=180&fit=crop" },
+  { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/flyover", thumbnailUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=320&h=180&fit=crop" },
 ]
 
 // Get YouTube thumbnail URL
@@ -128,20 +128,13 @@ export function WindowsGrid({ kioskMode, currentKioskIndex, onWindowSelect }: Wi
               )}
               style={{ aspectRatio: "16/9" }}
             >
-              {/* Thumbnail Image for YouTube videos */}
-              {window.videoId && (
-                <img
-                  src={getThumbnailUrl(window)}
-                  alt={window.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  loading="lazy"
-                />
-              )}
-              
-              {/* Gradient background for external links */}
-              {isExternal && (
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-card to-accent/30" />
-              )}
+              {/* Thumbnail Image for all windows */}
+              <img
+                src={getThumbnailUrl(window)}
+                alt={window.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                loading="lazy"
+              />
               
               {/* Dark overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
