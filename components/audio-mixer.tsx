@@ -10,47 +10,34 @@ interface AudioSource {
   id: AudioType
   label: string
   icon: React.ReactNode
-  // Using multiple fallback URLs for reliability
-  urls: string[]
+  url: string
 }
 
-// Using reliable free audio sources - multiple fallbacks per sound
+// Using reliable, publicly accessible audio sources from Archive.org and other free CDNs
 const audioSources: AudioSource[] = [
   {
     id: "rain",
     label: "RAIN",
     icon: <CloudRain className="h-4 w-4" />,
-    urls: [
-      "https://sounds.pond5.com/rain-forest-sound-effect-049568668_nw_preview.m4a",
-      "https://freesound.org/data/previews/531/531947_5828667-lq.mp3",
-    ],
+    url: "https://ia800905.us.archive.org/19/items/RaijinCD/RainAmbience.mp3",
   },
   {
     id: "waves",
     label: "WAVES",
     icon: <Waves className="h-4 w-4" />,
-    urls: [
-      "https://sounds.pond5.com/ocean-waves-sound-effect-059498516_nw_preview.m4a",
-      "https://freesound.org/data/previews/467/467919_8407711-lq.mp3",
-    ],
+    url: "https://ia800503.us.archive.org/15/items/ocean_waves_sounds/ocean_waves.mp3",
   },
   {
     id: "forest",
     label: "FOREST",
     icon: <TreePine className="h-4 w-4" />,
-    urls: [
-      "https://sounds.pond5.com/forest-birds-ambience-sound-effect-029587932_nw_preview.m4a",
-      "https://freesound.org/data/previews/525/525208_36001-lq.mp3",
-    ],
+    url: "https://ia600208.us.archive.org/12/items/forest-ambience-birds-nature-sounds/Forest%20Ambience%20-%20Birds%2C%20Nature%20Sounds.mp3",
   },
   {
     id: "lofi",
     label: "LO-FI",
     icon: <Music className="h-4 w-4" />,
-    urls: [
-      "https://sounds.pond5.com/lofi-hip-hop-beat-royalty-free-music-100085692_nw_preview.m4a",
-      "https://freesound.org/data/previews/612/612095_5674468-lq.mp3",
-    ],
+    url: "https://ia800101.us.archive.org/14/items/LofiHipHop/Lofi%20Hip%20Hop.mp3",
   },
 ]
 
@@ -72,39 +59,6 @@ export function AudioMixer() {
     setError(null)
   }, [])
 
-  const tryPlayAudio = useCallback(async (urls: string[], index: number = 0): Promise<HTMLAudioElement | null> => {
-    if (index >= urls.length) {
-      return null
-    }
-
-    return new Promise((resolve) => {
-      const audio = new Audio()
-      audio.crossOrigin = "anonymous"
-      
-      const handleCanPlay = () => {
-        cleanup()
-        resolve(audio)
-      }
-      
-      const handleError = () => {
-        cleanup()
-        // Try next URL
-        tryPlayAudio(urls, index + 1).then(resolve)
-      }
-      
-      const cleanup = () => {
-        audio.removeEventListener("canplaythrough", handleCanPlay)
-        audio.removeEventListener("error", handleError)
-      }
-      
-      audio.addEventListener("canplaythrough", handleCanPlay)
-      audio.addEventListener("error", handleError)
-      
-      audio.src = urls[index]
-      audio.load()
-    })
-  }, [])
-
   const playAudio = useCallback(async (source: AudioSource) => {
     // If same audio is playing, stop it
     if (activeAudio === source.id) {
@@ -123,27 +77,29 @@ export function AudioMixer() {
     setActiveAudio(source.id)
 
     try {
-      const audio = await tryPlayAudio(source.urls)
+      const audio = new Audio(source.url)
+      audio.loop = true
+      audio.volume = volume
+      audioRef.current = audio
       
-      if (audio) {
-        audio.loop = true
-        audio.volume = volume
-        audioRef.current = audio
-        
-        await audio.play()
+      audio.addEventListener("canplaythrough", () => {
         setIsLoading(false)
-      } else {
-        setError("Unable to load audio")
+      }, { once: true })
+      
+      audio.addEventListener("error", () => {
+        setError("Audio unavailable")
         setIsLoading(false)
         setActiveAudio(null)
-      }
+        audioRef.current = null
+      }, { once: true })
+      
+      await audio.play()
     } catch (err) {
-      console.error("Audio playback error:", err)
       setError("Click to retry")
       setIsLoading(false)
       setActiveAudio(null)
     }
-  }, [activeAudio, volume, stopAudio, tryPlayAudio])
+  }, [activeAudio, volume, stopAudio])
 
   useEffect(() => {
     if (audioRef.current) {
@@ -164,14 +120,14 @@ export function AudioMixer() {
   return (
     <div className="bg-card border border-border rounded-lg p-4">
       {/* Audio buttons centered and evenly spaced */}
-      <div className="flex items-center justify-center gap-3 sm:gap-4">
+      <div className="flex items-center justify-center gap-2 sm:gap-3">
         {audioSources.map((source) => (
           <button
             key={source.id}
             onClick={() => playAudio(source)}
             disabled={isLoading && activeAudio !== source.id}
             className={cn(
-              "audio-btn flex items-center justify-center gap-2 flex-1 min-w-0 px-3 py-2.5",
+              "audio-btn flex items-center justify-center gap-2 flex-1 max-w-[120px] px-3 py-2.5",
               activeAudio === source.id && "active",
               isLoading && activeAudio === source.id && "animate-pulse"
             )}
@@ -187,7 +143,7 @@ export function AudioMixer() {
         <button
           onClick={stopAudio}
           className={cn(
-            "audio-btn flex items-center justify-center gap-2 flex-1 min-w-0 px-3 py-2.5",
+            "audio-btn flex items-center justify-center gap-2 flex-1 max-w-[120px] px-3 py-2.5",
             activeAudio === null ? "opacity-50 cursor-default" : "hover:border-destructive hover:text-destructive"
           )}
           disabled={activeAudio === null}
