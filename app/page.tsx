@@ -5,9 +5,8 @@ import { AudioMixer } from "@/components/audio-mixer"
 import { WindowsGrid, windows } from "@/components/windows-grid"
 import { StatusBadge } from "@/components/status-badge"
 import { KioskControls } from "@/components/kiosk-controls"
-import { useGoldenHour, getModeThemeClass, getModeLabel } from "@/hooks/use-golden-hour"
+import { useGoldenHour, getModeThemeClass } from "@/hooks/use-golden-hour"
 import { cn } from "@/lib/utils"
-import { Sun, Sunset, Moon } from "lucide-react"
 
 const KIOSK_INTERVAL_MINUTES = 10
 
@@ -51,14 +50,12 @@ export default function Home() {
     }
   }, [kioskMode])
 
-  const TimeModeIcon = timeMode === "focus" ? Sun : timeMode === "winddown" ? Sunset : Moon
-
   // Show a loading state until client-side hydration is complete
   if (!mounted) {
     return (
       <div className="min-h-screen flex flex-col bg-background">
         <div className="flex-1 flex items-center justify-center">
-          <div className="text-foreground/50 text-lg">Loading Wellness Window...</div>
+          <div className="text-muted-foreground text-lg">Loading Wellness Window...</div>
         </div>
       </div>
     )
@@ -66,28 +63,20 @@ export default function Home() {
 
   return (
     <div className={cn(
-      "min-h-screen flex flex-col transition-colors duration-1000 bg-background",
+      "min-h-screen flex flex-col",
       getModeThemeClass(timeMode)
     )}>
       {/* Header */}
-      <header className="sticky top-0 z-40 glass border-b border-border/50">
-        <div className="container mx-auto px-4 py-4">
+      <header className="border-b border-border bg-card/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo/Title */}
-            <div className="flex items-center gap-3">
-              <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
-                THE WELLNESS WINDOW
-              </h1>
-            </div>
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+              WELLNESS WINDOW
+            </h1>
 
             {/* Right side controls */}
             <div className="flex items-center gap-3">
-              {/* Time Mode Indicator */}
-              <div className="hidden md:flex items-center gap-2 text-xs text-muted-foreground px-3 py-1.5 glass-subtle rounded-full">
-                <TimeModeIcon className="h-3.5 w-3.5 text-primary" />
-                <span>{getModeLabel(timeMode)}</span>
-              </div>
-
               {/* Kiosk Controls */}
               <KioskControls
                 isActive={kioskMode}
@@ -97,43 +86,33 @@ export default function Home() {
               />
 
               {/* Status Badge */}
-              <StatusBadge className="hidden sm:flex" />
+              <StatusBadge />
             </div>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 container mx-auto px-4 py-6 flex flex-col gap-6">
+      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-6 flex flex-col gap-6">
         {/* Audio Dashboard */}
         <AudioMixer />
 
         {/* Windows Section */}
-        <section className="flex-1">
-          <WindowsGrid
-            kioskMode={kioskMode}
-            currentKioskIndex={kioskIndex}
-            onWindowSelect={handleWindowSelect}
-          />
-        </section>
+        <WindowsGrid
+          kioskMode={kioskMode}
+          currentKioskIndex={kioskIndex}
+          onWindowSelect={handleWindowSelect}
+        />
       </main>
 
       {/* Footer */}
-      <footer className="glass border-t border-border/50 py-4">
-        <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-xs text-muted-foreground">
-            A digital sanctuary for focus, relaxation, and serenity
-          </p>
-          <p className="text-sm font-medium tracking-wider text-foreground/60">
-            ARK <span className="text-primary">-</span> AZ
+      <footer className="border-t border-border bg-card/50 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <p className="text-sm text-muted-foreground">
+            Another product brought to you by <span className="text-primary font-medium">Adam</span>
           </p>
         </div>
       </footer>
-
-      {/* Mobile Status Badge */}
-      <div className="fixed bottom-20 right-4 sm:hidden">
-        <StatusBadge />
-      </div>
     </div>
   )
 }

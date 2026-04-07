@@ -3,77 +3,70 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Wellness Window - Zen Theme with Time-Aware Colors */
+/* Wellness Window - Zen Theme matching original site */
 :root {
-  /* Default: Focus Mode (9am-5pm) - Deep Charcoal with Teal accent */
-  --background: oklch(0.12 0.01 240);
-  --foreground: oklch(0.95 0 0);
-  --card: oklch(0.16 0.01 240);
-  --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.14 0.01 240);
-  --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.7 0.12 180);
-  --primary-foreground: oklch(0.12 0 0);
-  --secondary: oklch(0.22 0.01 240);
-  --secondary-foreground: oklch(0.9 0 0);
-  --muted: oklch(0.2 0.01 240);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.6 0.15 180);
-  --accent-foreground: oklch(0.12 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.95 0 0);
-  --border: oklch(0.28 0.02 240);
-  --input: oklch(0.22 0.01 240);
-  --ring: oklch(0.7 0.12 180);
-  --radius: 1rem;
-  
-  /* Glass effect colors */
-  --glass: oklch(0.18 0.01 240 / 0.6);
-  --glass-border: oklch(0.4 0.02 240 / 0.3);
-  --glass-highlight: oklch(1 0 0 / 0.05);
+  /* Deep dark background like the original */
+  --background: #1a1a2e;
+  --foreground: #eaeaea;
+  --card: #252542;
+  --card-foreground: #eaeaea;
+  --popover: #1f1f38;
+  --popover-foreground: #eaeaea;
+  --primary: #4ecdc4;
+  --primary-foreground: #1a1a2e;
+  --secondary: #2d2d4a;
+  --secondary-foreground: #d0d0d0;
+  --muted: #2a2a45;
+  --muted-foreground: #a0a0a0;
+  --accent: #ff6b6b;
+  --accent-foreground: #1a1a2e;
+  --destructive: #e74c3c;
+  --destructive-foreground: #ffffff;
+  --border: #3d3d5c;
+  --input: #2d2d4a;
+  --ring: #4ecdc4;
+  --radius: 0.75rem;
   
   /* Status indicator */
-  --status-glow: oklch(0.7 0.2 150);
+  --status-glow: #4ecdc4;
   
   /* Chart colors */
-  --chart-1: oklch(0.7 0.12 180);
-  --chart-2: oklch(0.65 0.15 200);
-  --chart-3: oklch(0.6 0.12 220);
-  --chart-4: oklch(0.75 0.1 160);
-  --chart-5: oklch(0.55 0.15 190);
+  --chart-1: #4ecdc4;
+  --chart-2: #45b7aa;
+  --chart-3: #3ca396;
+  --chart-4: #5dd9d0;
+  --chart-5: #6ee5dc;
   
   /* Sidebar */
-  --sidebar: oklch(0.14 0.01 240);
-  --sidebar-foreground: oklch(0.95 0 0);
-  --sidebar-primary: oklch(0.7 0.12 180);
-  --sidebar-primary-foreground: oklch(0.12 0 0);
-  --sidebar-accent: oklch(0.22 0.01 240);
-  --sidebar-accent-foreground: oklch(0.9 0 0);
-  --sidebar-border: oklch(0.28 0.02 240);
-  --sidebar-ring: oklch(0.7 0.12 180);
+  --sidebar: #1f1f38;
+  --sidebar-foreground: #eaeaea;
+  --sidebar-primary: #4ecdc4;
+  --sidebar-primary-foreground: #1a1a2e;
+  --sidebar-accent: #2d2d4a;
+  --sidebar-accent-foreground: #d0d0d0;
+  --sidebar-border: #3d3d5c;
+  --sidebar-ring: #4ecdc4;
 }
 
 /* Wind-down Mode (5pm-8pm) - Warm Sunset Orange */
 .theme-winddown {
-  --primary: oklch(0.75 0.16 50);
-  --accent: oklch(0.7 0.18 40);
-  --ring: oklch(0.75 0.16 50);
-  --status-glow: oklch(0.75 0.2 50);
-  --glass-border: oklch(0.5 0.1 50 / 0.3);
+  --primary: #ff9f43;
+  --accent: #ff7f50;
+  --ring: #ff9f43;
+  --status-glow: #ff9f43;
 }
 
 /* Rest Mode (8pm+) - Deep Midnight Indigo */
 .theme-rest {
-  --primary: oklch(0.55 0.18 280);
-  --accent: oklch(0.5 0.2 290);
-  --ring: oklch(0.55 0.18 280);
-  --status-glow: oklch(0.6 0.25 280);
-  --glass-border: oklch(0.4 0.1 280 / 0.3);
+  --primary: #a29bfe;
+  --accent: #6c5ce7;
+  --ring: #a29bfe;
+  --status-glow: #a29bfe;
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Geist Mono', monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -121,19 +114,47 @@
   }
 }
 
-/* Glassmorphism utility classes */
-.glass {
-  background: var(--glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
+/* Card styling matching original */
+.window-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
 }
 
-.glass-subtle {
-  background: oklch(0.15 0.01 240 / 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
+.window-card:hover {
+  background: var(--secondary);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.15);
+}
+
+.window-card.active {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+}
+
+/* Audio button styling */
+.audio-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.audio-btn:hover {
+  background: var(--secondary);
+  border-color: var(--primary);
+}
+
+.audio-btn.active {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
 }
 
 /* Pulsing status indicator */
@@ -150,11 +171,6 @@
 
 .status-pulse {
   animation: pulse-glow 2s ease-in-out infinite;
-}
-
-/* Smooth theme transitions */
-* {
-  transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 /* Hide scrollbar but allow scrolling */

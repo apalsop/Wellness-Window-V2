@@ -17,26 +17,26 @@ const audioSources: AudioSource[] = [
   {
     id: "rain",
     label: "RAIN",
-    icon: <CloudRain className="h-5 w-5" />,
-    url: "https://cdn.pixabay.com/audio/2022/05/16/audio_1fc75b5261.mp3", // Rain sounds
+    icon: <CloudRain className="h-4 w-4" />,
+    url: "https://cdn.pixabay.com/audio/2022/05/16/audio_1fc75b5261.mp3",
   },
   {
     id: "waves",
     label: "WAVES",
-    icon: <Waves className="h-5 w-5" />,
-    url: "https://cdn.pixabay.com/audio/2024/07/30/audio_ac440445a6.mp3", // Ocean waves
+    icon: <Waves className="h-4 w-4" />,
+    url: "https://cdn.pixabay.com/audio/2024/07/30/audio_ac440445a6.mp3",
   },
   {
     id: "forest",
     label: "FOREST",
-    icon: <TreePine className="h-5 w-5" />,
-    url: "https://cdn.pixabay.com/audio/2022/03/12/audio_4c26ed1d2a.mp3", // Forest birds
+    icon: <TreePine className="h-4 w-4" />,
+    url: "https://cdn.pixabay.com/audio/2022/03/12/audio_4c26ed1d2a.mp3",
   },
   {
     id: "lofi",
     label: "LO-FI",
-    icon: <Music className="h-5 w-5" />,
-    url: "https://cdn.pixabay.com/audio/2022/11/08/audio_d87c3ddc95.mp3", // Lo-fi beats
+    icon: <Music className="h-4 w-4" />,
+    url: "https://cdn.pixabay.com/audio/2022/11/08/audio_d87c3ddc95.mp3",
   },
 ]
 
@@ -57,13 +57,11 @@ export function AudioMixer() {
   }, [])
 
   const playAudio = useCallback((source: AudioSource) => {
-    // Stop any currently playing audio
     if (audioRef.current) {
       audioRef.current.pause()
       audioRef.current.currentTime = 0
     }
 
-    // If clicking the same button, just stop
     if (activeAudio === source.id) {
       stopAudio()
       return
@@ -88,14 +86,12 @@ export function AudioMixer() {
     setActiveAudio(source.id)
   }, [activeAudio, volume, stopAudio])
 
-  // Update volume when slider changes
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = volume
     }
   }, [volume])
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => {
       if (audioRef.current) {
@@ -106,13 +102,41 @@ export function AudioMixer() {
   }, [])
 
   return (
-    <div className="glass rounded-2xl p-4 flex flex-col gap-4">
-      <div className="flex items-center justify-between">
-        <h2 className="text-sm font-medium tracking-wider text-muted-foreground uppercase">
-          Ambient Mixer
-        </h2>
+    <div className="bg-card border border-border rounded-lg p-4">
+      <div className="flex flex-wrap items-center gap-3">
+        {/* Audio Buttons */}
+        {audioSources.map((source) => (
+          <button
+            key={source.id}
+            onClick={() => playAudio(source)}
+            disabled={isLoading && activeAudio !== source.id}
+            className={cn(
+              "audio-btn flex items-center gap-2",
+              activeAudio === source.id && "active"
+            )}
+          >
+            <span className={cn(activeAudio === source.id && "animate-pulse")}>
+              {source.icon}
+            </span>
+            <span>{source.label}</span>
+          </button>
+        ))}
+        
+        {/* OFF Button */}
+        <button
+          onClick={stopAudio}
+          className={cn(
+            "audio-btn flex items-center gap-2",
+            activeAudio === null ? "opacity-50" : "hover:border-destructive hover:text-destructive"
+          )}
+        >
+          <VolumeX className="h-4 w-4" />
+          <span>OFF</span>
+        </button>
+
+        {/* Volume Slider */}
         {activeAudio && (
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 ml-auto">
             <Volume2 className="h-4 w-4 text-muted-foreground" />
             <input
               type="range"
@@ -121,55 +145,10 @@ export function AudioMixer() {
               step="0.1"
               value={volume}
               onChange={(e) => setVolume(parseFloat(e.target.value))}
-              className="w-20 h-1 bg-muted rounded-full appearance-none cursor-pointer accent-primary"
+              className="w-24 h-1.5 bg-muted rounded-full appearance-none cursor-pointer accent-primary"
             />
           </div>
         )}
-      </div>
-      
-      <div className="flex flex-wrap gap-2">
-        {audioSources.map((source) => (
-          <button
-            key={source.id}
-            onClick={() => playAudio(source)}
-            disabled={isLoading && activeAudio !== source.id}
-            className={cn(
-              "glass-subtle flex items-center gap-2 px-4 py-2.5 rounded-xl",
-              "text-sm font-medium tracking-wide",
-              "transition-all duration-300 ease-out",
-              "hover:scale-105 active:scale-95",
-              "focus:outline-none focus:ring-2 focus:ring-primary/50",
-              activeAudio === source.id
-                ? "bg-primary/20 text-primary border-primary/50 shadow-lg shadow-primary/20"
-                : "text-foreground/80 hover:text-foreground hover:bg-secondary/50"
-            )}
-          >
-            <span className={cn(
-              "transition-transform duration-300",
-              activeAudio === source.id && "animate-pulse"
-            )}>
-              {source.icon}
-            </span>
-            <span>{source.label}</span>
-          </button>
-        ))}
-        
-        <button
-          onClick={stopAudio}
-          className={cn(
-            "glass-subtle flex items-center gap-2 px-4 py-2.5 rounded-xl",
-            "text-sm font-medium tracking-wide",
-            "transition-all duration-300 ease-out",
-            "hover:scale-105 active:scale-95",
-            "focus:outline-none focus:ring-2 focus:ring-destructive/50",
-            activeAudio === null
-              ? "text-muted-foreground"
-              : "text-destructive hover:bg-destructive/10 border-destructive/30"
-          )}
-        >
-          <VolumeX className="h-5 w-5" />
-          <span>OFF</span>
-        </button>
       </div>
     </div>
   )

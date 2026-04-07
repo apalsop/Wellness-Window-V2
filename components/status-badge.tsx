@@ -9,8 +9,8 @@ interface StatusBadgeProps {
 export function StatusBadge({ className }: StatusBadgeProps) {
   return (
     <div className={cn(
-      "flex items-center gap-2 px-3 py-1.5 rounded-full",
-      "glass-subtle text-xs font-mono tracking-wider",
+      "flex items-center gap-2 px-3 py-1.5 rounded-lg",
+      "bg-card border border-border text-xs font-mono tracking-wider",
       className
     )}>
       <span className="relative flex h-2 w-2">
@@ -18,7 +18,7 @@ export function StatusBadge({ className }: StatusBadgeProps) {
         <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
       </span>
       <span className="text-muted-foreground">
-        ARK-AZ <span className="text-primary/80">//</span> STABLE
+        ARK-AZ <span className="text-primary">//</span> STABLE
       </span>
     </div>
   )

@@ -19,21 +19,12 @@ export function KioskControls({
   className 
 }: KioskControlsProps) {
   return (
-    <div className={cn(
-      "flex items-center gap-2",
-      className
-    )}>
+    <div className={cn("flex items-center gap-2", className)}>
       <button
         onClick={onToggle}
         className={cn(
-          "glass-subtle flex items-center gap-2 px-4 py-2 rounded-xl",
-          "text-sm font-medium tracking-wide",
-          "transition-all duration-300 ease-out",
-          "hover:scale-105 active:scale-95",
-          "focus:outline-none focus:ring-2 focus:ring-primary/50",
-          isActive
-            ? "bg-primary/20 text-primary border-primary/50"
-            : "text-foreground/80 hover:text-foreground hover:bg-secondary/50"
+          "audio-btn flex items-center gap-2",
+          isActive && "active"
         )}
         aria-label={isActive ? "Stop kiosk mode" : "Start kiosk mode"}
       >
@@ -49,14 +40,7 @@ export function KioskControls({
         <>
           <button
             onClick={onSkip}
-            className={cn(
-              "glass-subtle flex items-center gap-2 px-3 py-2 rounded-xl",
-              "text-sm font-medium",
-              "transition-all duration-300 ease-out",
-              "hover:scale-105 active:scale-95",
-              "focus:outline-none focus:ring-2 focus:ring-primary/50",
-              "text-foreground/80 hover:text-foreground hover:bg-secondary/50"
-            )}
+            className="audio-btn flex items-center gap-2 px-3"
             aria-label="Skip to next window"
           >
             <SkipForward className="h-4 w-4" />
