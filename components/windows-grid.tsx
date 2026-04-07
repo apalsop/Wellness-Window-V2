@@ -14,35 +14,48 @@ export interface WindowItem {
   thumbnailUrl?: string
 }
 
-// Windows in order per user request
+// Windows with CORRECT labels based on actual YouTube video titles
 export const windows: WindowItem[] = [
-  // Button 1
-  { id: "stream-1", title: "Jackson Hole Town Square", videoId: "1EiC9bvVGnk" },
-  // Button 2 (was Button 3 in spec - continuing sequence)
-  { id: "stream-2", title: "Venice Italy Live Cam", videoId: "dfVK7ld38Ys" },
-  // Button 3
-  { id: "stream-3", title: "Shibuya Scramble Crossing", videoId: "BWnloy8r0qU" },
-  // Button 4
-  { id: "stream-4", title: "Aurora Borealis / Northern Lights", subtitle: "Utsjoki, Finland", videoId: "LhNF-UFpWNY" },
-  // Button 5
-  { id: "stream-5", title: "Yellowstone Live", videoId: "fO9e9jnhYK8" },
-  // Button 6 - Namibia Waterhole
+  // 1EiC9bvVGnk = Jackson Hole Town Square (CORRECT)
+  { id: "jackson-hole", title: "Jackson Hole Town Square", subtitle: "Wyoming, USA", videoId: "1EiC9bvVGnk" },
+  
+  // dfVK7ld38Ys = Shibuya Scramble Crossing (was mislabeled as Venice)
+  { id: "shibuya", title: "Shibuya Scramble Crossing", subtitle: "Tokyo, Japan", videoId: "dfVK7ld38Ys" },
+  
+  // BWnloy8r0qU = Yellowstone / Old Faithful (was mislabeled as Shibuya)
+  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "BWnloy8r0qU" },
+  
+  // LhNF-UFpWNY = Aurora Borealis (CORRECT)
+  { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "LhNF-UFpWNY" },
+  
+  // fO9e9jnhYK8 = Earth from ISS (was mislabeled as Yellowstone)
+  { id: "iss-earth", title: "Earth from Space", subtitle: "ISS Live 4K", videoId: "fO9e9jnhYK8" },
+  
+  // ydYDqZQpim8 = Namibia Waterhole
   { id: "namibia", title: "Namibia Waterhole", subtitle: "Wildlife Watch - Africa", videoId: "ydYDqZQpim8" },
-  // Button 7
+  
+  // aaUERtNMn7o = Anacapa Island Cove (CORRECT)
   { id: "anacapa", title: "Anacapa Island Cove", subtitle: "Channel Islands National Park", videoId: "aaUERtNMn7o" },
-  // Button 8
-  { id: "stream-8", title: "Underwater Ocean Reef", videoId: "1zcIUk66HX4" },
-  // Button 9
-  { id: "kenya-safari", title: "African Safari - Kenya Wildlife", subtitle: "MPALA | explore.org", videoId: "LC-DK_22eK4" },
-  // Button 10
-  { id: "kenya-waterhole", title: "Watering Hole in Kenya", subtitle: "MPALA | explore.org", videoId: "oORXfTviuCs" },
-  // Kept from previous - Fireplace
-  { id: "fireplace", title: "Cozy Fireplace", subtitle: "Relaxing Ambiance", videoId: "L_LUpnjgPso" },
-  // Autumn Forest - original working ID
-  { id: "autumn-forest", title: "Autumn Forest", subtitle: "Nature Relaxation", videoId: "xNN7iTA57jM" },
-  // Redwood Forest - working video  
-  { id: "redwood", title: "Redwood Forest", subtitle: "Pacific Coast", videoId: "euN1PqLwrX4" },
-  // External links with placeholder images from Unsplash
+  
+  // 1zcIUk66HX4 = Underwater Reef Cam (CORRECT but better title)
+  { id: "underwater", title: "Underwater Reef Cam", subtitle: "Utopia Village, Honduras", videoId: "1zcIUk66HX4" },
+  
+  // LC-DK_22eK4 = African Safari Kenya (CORRECT)
+  { id: "kenya-safari", title: "African Safari", subtitle: "Kenya Wildlife - MPALA", videoId: "LC-DK_22eK4" },
+  
+  // oORXfTviuCs = Watering Hole Kenya (CORRECT)
+  { id: "kenya-waterhole", title: "Watering Hole", subtitle: "Kenya - MPALA", videoId: "oORXfTviuCs" },
+  
+  // L_LUpnjgPso = Fireplace 10 hours (CORRECT)
+  { id: "fireplace", title: "Cozy Fireplace", subtitle: "10 Hours Full HD", videoId: "L_LUpnjgPso" },
+  
+  // xNN7iTA57jM = Forest Sounds / Woodland Ambience (was mislabeled as Autumn Forest)
+  { id: "woodland", title: "Woodland Ambience", subtitle: "Forest Sounds & Bird Song", videoId: "xNN7iTA57jM" },
+  
+  // _1nnhg3JpwM = Redwood Forest Stream (USER PROVIDED CORRECT ID)
+  { id: "redwood", title: "Redwood Forest", subtitle: "California Stream Ambience", videoId: "_1nnhg3JpwM" },
+  
+  // External links with Unsplash images
   { id: "window-swap", title: "Random Window Swap", subtitle: "Global Community Portal", externalUrl: "https://www.window-swap.com/window", thumbnailUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=320&h=180&fit=crop" },
   { id: "drive-listen", title: "City Drive & Radio", subtitle: "Immersive City Streets", externalUrl: "https://driveandlisten.app/", thumbnailUrl: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=320&h=180&fit=crop" },
   { id: "walking-tour", title: "Virtual Walking Tour", subtitle: "100+ Cities & Locations", externalUrl: "https://virtualvacation.us/walking-tour", thumbnailUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=320&h=180&fit=crop" },
@@ -53,7 +66,7 @@ export const windows: WindowItem[] = [
 function getThumbnailUrl(window: WindowItem): string {
   if (window.thumbnailUrl) return window.thumbnailUrl
   if (window.videoId) return `https://img.youtube.com/vi/${window.videoId}/mqdefault.jpg`
-  return "/placeholder-thumb.jpg"
+  return ""
 }
 
 interface WindowsGridProps {
@@ -128,7 +141,7 @@ export function WindowsGrid({ kioskMode, currentKioskIndex, onWindowSelect }: Wi
               )}
               style={{ aspectRatio: "16/9" }}
             >
-              {/* Thumbnail Image for all windows */}
+              {/* Thumbnail Image */}
               <img
                 src={getThumbnailUrl(window)}
                 alt={window.title}
