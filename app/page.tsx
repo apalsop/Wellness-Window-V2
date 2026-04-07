@@ -15,6 +15,12 @@ export default function Home() {
   const timeMode = useGoldenHour()
   const [kioskMode, setKioskMode] = useState(false)
   const [kioskIndex, setKioskIndex] = useState(0)
+  const [mounted, setMounted] = useState(false)
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Kiosk mode auto-cycling
   useEffect(() => {
@@ -47,9 +53,20 @@ export default function Home() {
 
   const TimeModeIcon = timeMode === "focus" ? Sun : timeMode === "winddown" ? Sunset : Moon
 
+  // Show a loading state until client-side hydration is complete
+  if (!mounted) {
+    return (
+      <div className="min-h-screen flex flex-col bg-background">
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-foreground/50 text-lg">Loading Wellness Window...</div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className={cn(
-      "min-h-screen flex flex-col transition-colors duration-1000",
+      "min-h-screen flex flex-col transition-colors duration-1000 bg-background",
       getModeThemeClass(timeMode)
     )}>
       {/* Header */}
