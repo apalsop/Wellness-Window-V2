@@ -103,15 +103,15 @@ export function AudioMixer() {
 
   return (
     <div className="bg-card border border-border rounded-lg p-4">
-      <div className="flex flex-wrap items-center gap-3">
-        {/* Audio Buttons */}
+      {/* Audio buttons centered and evenly spaced */}
+      <div className="flex items-center justify-center gap-2 sm:gap-4 flex-wrap">
         {audioSources.map((source) => (
           <button
             key={source.id}
             onClick={() => playAudio(source)}
             disabled={isLoading && activeAudio !== source.id}
             className={cn(
-              "audio-btn flex items-center gap-2",
+              "audio-btn flex items-center gap-2 flex-1 justify-center min-w-[80px] max-w-[120px]",
               activeAudio === source.id && "active"
             )}
           >
@@ -126,30 +126,30 @@ export function AudioMixer() {
         <button
           onClick={stopAudio}
           className={cn(
-            "audio-btn flex items-center gap-2",
+            "audio-btn flex items-center gap-2 flex-1 justify-center min-w-[80px] max-w-[120px]",
             activeAudio === null ? "opacity-50" : "hover:border-destructive hover:text-destructive"
           )}
         >
           <VolumeX className="h-4 w-4" />
           <span>OFF</span>
         </button>
-
-        {/* Volume Slider */}
-        {activeAudio && (
-          <div className="flex items-center gap-2 ml-auto">
-            <Volume2 className="h-4 w-4 text-muted-foreground" />
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.1"
-              value={volume}
-              onChange={(e) => setVolume(parseFloat(e.target.value))}
-              className="w-24 h-1.5 bg-muted rounded-full appearance-none cursor-pointer accent-primary"
-            />
-          </div>
-        )}
       </div>
+
+      {/* Volume Slider - shown below when audio is active */}
+      {activeAudio && (
+        <div className="flex items-center justify-center gap-3 mt-4 pt-4 border-t border-border">
+          <Volume2 className="h-4 w-4 text-muted-foreground" />
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.1"
+            value={volume}
+            onChange={(e) => setVolume(parseFloat(e.target.value))}
+            className="w-32 h-1.5 bg-muted rounded-full appearance-none cursor-pointer accent-primary"
+          />
+        </div>
+      )}
     </div>
   )
 }

@@ -108,8 +108,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-border bg-card/50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-sm text-muted-foreground">
-            Another product brought to you by <span className="text-primary font-medium">Adam</span>
+          <p className="text-sm text-muted-foreground font-medium">
+            ARK - AZ
           </p>
         </div>
       </footer>

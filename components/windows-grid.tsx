@@ -11,26 +11,26 @@ export interface WindowItem {
   videoId: string
 }
 
-// Using verified YouTube video IDs that have thumbnails
-const windows: WindowItem[] = [
+// Verified working YouTube video IDs with good thumbnails
+export const windows: WindowItem[] = [
   { id: "jackson-hole", title: "Jackson Hole", videoId: "1EiC9bvVGnk" },
   { id: "venice-guglie", title: "Venice: Guglie", videoId: "ydYDqZQpim8" },
   { id: "venice-marks", title: "Venice: St. Marks", videoId: "PZPLz8CJNP8" },
-  { id: "shibuya", title: "Shibuya Crossing", videoId: "3n6Rre3l5jE" },
+  { id: "shibuya", title: "Shibuya Crossing", videoId: "gFRtAAmiFbE" },
   { id: "yellowstone", title: "Yellowstone", videoId: "RFH7HzviRdQ" },
   { id: "aurora", title: "Aurora Borealis", videoId: "WHTFuRdWYPM" },
   { id: "iss", title: "Earth & Space ISS", videoId: "P9C25Un7xaM" },
-  { id: "namibia", title: "Namibia", videoId: "ydYDqZQpim8" },
+  { id: "fireplace", title: "Fireplace", videoId: "ITBtNXd5WJs" },
   { id: "anacapa", title: "Anacapa Island", videoId: "DbjIHCFGISI" },
   { id: "reef", title: "Underwater Reef", videoId: "r9LIasj1P_Q" },
-  { id: "kenya-safari", title: "Kenya Safari", videoId: "IUfzqSVSYbA" },
+  { id: "forest-stream", title: "Forest Stream", videoId: "Oifns9hCuLk" },
   { id: "kenya-waterhole", title: "Kenya Waterhole", videoId: "FxL4pWtCIqE" },
   { id: "city-drive", title: "City Drive & Radio", videoId: "5qap5aO4i9A" },
-  { id: "walking", title: "Walking Tour", videoId: "8ybW48rKBME" },
-  { id: "flyover", title: "Airplane Flyover", videoId: "qVrMd3DjzVA" },
+  { id: "autumn-forest", title: "Autumn Forest", videoId: "XpKwrYEBafo" },
+  { id: "redwood", title: "Redwood Forest", videoId: "_1nnhg3JpwM" },
 ]
 
-// Get YouTube thumbnail URL - using maxresdefault with fallback
+// Get YouTube thumbnail URL
 function getThumbnailUrl(videoId: string): string {
   return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
 }
@@ -72,9 +72,6 @@ export function WindowsGrid({ kioskMode, currentKioskIndex, onWindowSelect }: Wi
           <p className="text-muted-foreground">
             Select a Window
           </p>
-          <p className="text-muted-foreground/60 text-sm mt-1">
-            F11 for Full Screen
-          </p>
         </div>
       )}
 
@@ -105,7 +102,7 @@ export function WindowsGrid({ kioskMode, currentKioskIndex, onWindowSelect }: Wi
             )}
             style={{ aspectRatio: "16/9" }}
           >
-            {/* Thumbnail Image using standard img tag */}
+            {/* Thumbnail Image */}
             <img
               src={getThumbnailUrl(window.videoId)}
               alt={window.title}
@@ -153,5 +150,3 @@ export function WindowsGrid({ kioskMode, currentKioskIndex, onWindowSelect }: Wi
     </div>
   )
 }
-
-export { windows }
