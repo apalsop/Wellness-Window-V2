@@ -3,8 +3,7 @@
 import { useState, useCallback } from "react"
 import { VideoPlayer } from "./video-player"
 import { cn } from "@/lib/utils"
-import { Shuffle } from "lucide-react"
-import Image from "next/image"
+import { Shuffle, Play } from "lucide-react"
 
 export interface WindowItem {
   id: string
@@ -12,16 +11,17 @@ export interface WindowItem {
   videoId: string
 }
 
+// Using verified YouTube video IDs that have thumbnails
 const windows: WindowItem[] = [
-  { id: "jackson-hole", title: "Jackson Hole", videoId: "1G2bKrh7CKw" },
+  { id: "jackson-hole", title: "Jackson Hole", videoId: "1EiC9bvVGnk" },
   { id: "venice-guglie", title: "Venice: Guglie", videoId: "ydYDqZQpim8" },
-  { id: "venice-marks", title: "Venice: St. Marks", videoId: "c0JVQLN4EqI" },
+  { id: "venice-marks", title: "Venice: St. Marks", videoId: "PZPLz8CJNP8" },
   { id: "shibuya", title: "Shibuya Crossing", videoId: "3n6Rre3l5jE" },
-  { id: "yellowstone", title: "Yellowstone", videoId: "6B4ZPl0LCVM" },
+  { id: "yellowstone", title: "Yellowstone", videoId: "RFH7HzviRdQ" },
   { id: "aurora", title: "Aurora Borealis", videoId: "WHTFuRdWYPM" },
   { id: "iss", title: "Earth & Space ISS", videoId: "P9C25Un7xaM" },
   { id: "namibia", title: "Namibia", videoId: "ydYDqZQpim8" },
-  { id: "anacapa", title: "Anacapa Island", videoId: "OmkGFrBQQaE" },
+  { id: "anacapa", title: "Anacapa Island", videoId: "DbjIHCFGISI" },
   { id: "reef", title: "Underwater Reef", videoId: "r9LIasj1P_Q" },
   { id: "kenya-safari", title: "Kenya Safari", videoId: "IUfzqSVSYbA" },
   { id: "kenya-waterhole", title: "Kenya Waterhole", videoId: "FxL4pWtCIqE" },
@@ -30,9 +30,9 @@ const windows: WindowItem[] = [
   { id: "flyover", title: "Airplane Flyover", videoId: "qVrMd3DjzVA" },
 ]
 
-// Get YouTube thumbnail URL
+// Get YouTube thumbnail URL - using maxresdefault with fallback
 function getThumbnailUrl(videoId: string): string {
-  return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+  return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
 }
 
 interface WindowsGridProps {
@@ -90,42 +90,45 @@ export function WindowsGrid({ kioskMode, currentKioskIndex, onWindowSelect }: Wi
       )}
 
       {/* Windows Grid with Thumbnails */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {windows.map((window, index) => (
           <button
             key={window.id}
             onClick={() => handleWindowClick(window)}
             className={cn(
-              "group relative aspect-video overflow-hidden rounded-lg",
-              "border border-border hover:border-primary/50",
-              "transition-all duration-200",
-              "focus:outline-none focus:ring-2 focus:ring-primary/50",
+              "window-card group relative overflow-hidden rounded-lg",
+              "border-2 border-border hover:border-primary",
+              "transition-all duration-300",
+              "focus:outline-none focus:ring-2 focus:ring-primary",
               activeWindow?.id === window.id && "ring-2 ring-primary border-primary",
               kioskMode && currentKioskIndex === index && "ring-2 ring-primary"
             )}
+            style={{ aspectRatio: "16/9" }}
           >
-            {/* Thumbnail Image */}
-            <Image
+            {/* Thumbnail Image using standard img tag */}
+            <img
               src={getThumbnailUrl(window.videoId)}
               alt={window.title}
-              fill
-              className="object-cover transition-transform duration-200 group-hover:scale-105"
-              sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
-              unoptimized
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              loading="lazy"
             />
             
-            {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
             
-            {/* Title */}
-            <div className="absolute bottom-0 left-0 right-0 p-2">
-              <h2 className="text-xs sm:text-sm font-medium text-white leading-tight drop-shadow-lg">
+            {/* Play icon on hover */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="w-12 h-12 rounded-full bg-primary/80 flex items-center justify-center">
+                <Play className="w-6 h-6 text-white fill-white" />
+              </div>
+            </div>
+            
+            {/* Title at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 p-3">
+              <h2 className="text-sm font-semibold text-white text-center drop-shadow-lg">
                 {window.title}
               </h2>
             </div>
-
-            {/* Hover overlay */}
-            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
           </button>
         ))}
 
@@ -133,15 +136,16 @@ export function WindowsGrid({ kioskMode, currentKioskIndex, onWindowSelect }: Wi
         <button
           onClick={handleRandomWindow}
           className={cn(
-            "group relative aspect-video overflow-hidden rounded-lg",
-            "border border-border hover:border-accent/50",
-            "bg-card transition-all duration-200",
-            "focus:outline-none focus:ring-2 focus:ring-accent/50",
-            "flex flex-col items-center justify-center gap-2"
+            "window-card group relative overflow-hidden rounded-lg",
+            "border-2 border-dashed border-accent/50 hover:border-accent",
+            "bg-card/50 transition-all duration-300",
+            "focus:outline-none focus:ring-2 focus:ring-accent",
+            "flex flex-col items-center justify-center gap-3"
           )}
+          style={{ aspectRatio: "16/9" }}
         >
-          <Shuffle className="h-6 w-6 text-accent transition-transform duration-200 group-hover:scale-110" />
-          <h2 className="text-xs sm:text-sm font-medium text-foreground leading-tight">
+          <Shuffle className="w-8 h-8 text-accent transition-transform duration-300 group-hover:scale-110 group-hover:rotate-180" />
+          <h2 className="text-sm font-semibold text-foreground">
             Random Window
           </h2>
         </button>
