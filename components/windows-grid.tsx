@@ -58,9 +58,12 @@ export const windows: WindowItem[] = [
   // External links with Unsplash images
   { id: "window-swap", title: "Random Window Swap", subtitle: "Global Community Portal", externalUrl: "https://www.window-swap.com/window", thumbnailUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=320&h=180&fit=crop" },
   { id: "drive-listen", title: "City Drive & Radio", subtitle: "Immersive City Streets", externalUrl: "https://driveandlisten.app/", thumbnailUrl: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=320&h=180&fit=crop" },
-  { id: "walking-tour", title: "Virtual Walking Tour", subtitle: "100+ Cities & Locations", externalUrl: "https://virtualvacation.us/walking-tour", thumbnailUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=320&h=180&fit=crop" },
-  { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/flyover", thumbnailUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=320&h=180&fit=crop" },
+  { id: "walking-tour", title: "Virtual Walking Tour", subtitle: "100+ Cities & Locations", externalUrl: "https://virtualvacation.us/walk", thumbnailUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=320&h=180&fit=crop" },
+  { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/fly", thumbnailUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=320&h=180&fit=crop" },
 ]
+
+// Live streams for kiosk mode (first 10 windows - all live webcams/streams)
+export const liveStreamWindows = windows.slice(0, 10)
 
 // Get YouTube thumbnail URL
 function getThumbnailUrl(window: WindowItem): string {
@@ -95,9 +98,8 @@ export function WindowsGrid({ kioskMode, currentKioskIndex, onWindowSelect }: Wi
     onWindowSelect(null)
   }, [onWindowSelect])
 
-  // In kiosk mode, auto-select the current window (skip external links)
-  const youtubeWindows = windows.filter(w => w.videoId)
-  const activeWindow = kioskMode ? youtubeWindows[currentKioskIndex % youtubeWindows.length] : selectedWindow
+  // In kiosk mode, cycle through only the first 10 live stream windows
+  const activeWindow = kioskMode ? liveStreamWindows[currentKioskIndex % liveStreamWindows.length] : selectedWindow
 
   return (
     <div className="flex flex-col gap-6">
@@ -123,9 +125,11 @@ export function WindowsGrid({ kioskMode, currentKioskIndex, onWindowSelect }: Wi
 
       {/* Windows Grid with Thumbnails */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {windows.map((window, index) => {
+        {windows.map((window) => {
           const isExternal = !!window.externalUrl
           const isActive = activeWindow?.id === window.id
+          // Check if this window is the currently playing kiosk window
+          const isKioskActive = kioskMode && liveStreamWindows[currentKioskIndex % liveStreamWindows.length]?.id === window.id
           
           return (
             <button
@@ -137,7 +141,7 @@ export function WindowsGrid({ kioskMode, currentKioskIndex, onWindowSelect }: Wi
                 "transition-all duration-300",
                 "focus:outline-none focus:ring-2 focus:ring-primary",
                 isActive && "ring-2 ring-primary border-primary",
-                kioskMode && !isExternal && currentKioskIndex === index && "ring-2 ring-primary"
+                isKioskActive && "ring-2 ring-primary border-primary"
               )}
               style={{ aspectRatio: "16/9" }}
             >
