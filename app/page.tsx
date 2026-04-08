@@ -2,18 +2,20 @@
 
 import { useState, useEffect, useCallback } from "react"
 import { AudioMixer } from "@/components/audio-mixer"
-import { WindowsGrid, windows } from "@/components/windows-grid"
+import { WindowsGrid, liveStreamWindows } from "@/components/windows-grid"
 import { StatusBadge } from "@/components/status-badge"
 import { KioskControls } from "@/components/kiosk-controls"
 import { useGoldenHour, getModeThemeClass } from "@/hooks/use-golden-hour"
 import { cn } from "@/lib/utils"
 
-const KIOSK_INTERVAL_MINUTES = 10
+const DEFAULT_INTERVAL_MINUTES = 10
 
 export default function Home() {
   const timeMode = useGoldenHour()
   const [kioskMode, setKioskMode] = useState(false)
   const [kioskIndex, setKioskIndex] = useState(0)
+  const [intervalMinutes, setIntervalMinutes] = useState(DEFAULT_INTERVAL_MINUTES)
+  const [timeUntilNext, setTimeUntilNext] = useState(DEFAULT_INTERVAL_MINUTES * 60)
   const [mounted, setMounted] = useState(false)
 
   // Prevent hydration mismatch
@@ -21,26 +23,43 @@ export default function Home() {
     setMounted(true)
   }, [])
 
-  // Kiosk mode auto-cycling
+  // Kiosk mode auto-cycling with countdown
   useEffect(() => {
     if (!kioskMode) return
 
-    const interval = setInterval(() => {
-      setKioskIndex((prev) => (prev + 1) % windows.length)
-    }, KIOSK_INTERVAL_MINUTES * 60 * 1000)
+    // Reset countdown when interval changes or kiosk starts
+    setTimeUntilNext(intervalMinutes * 60)
 
-    return () => clearInterval(interval)
-  }, [kioskMode])
+    const countdownInterval = setInterval(() => {
+      setTimeUntilNext((prev) => {
+        if (prev <= 1) {
+          // Time's up, move to next window
+          setKioskIndex((idx) => (idx + 1) % liveStreamWindows.length)
+          return intervalMinutes * 60 // Reset timer
+        }
+        return prev - 1
+      })
+    }, 1000)
+
+    return () => clearInterval(countdownInterval)
+  }, [kioskMode, intervalMinutes])
 
   const handleKioskToggle = useCallback(() => {
     setKioskMode((prev) => !prev)
     if (!kioskMode) {
       setKioskIndex(0)
+      setTimeUntilNext(intervalMinutes * 60)
     }
-  }, [kioskMode])
+  }, [kioskMode, intervalMinutes])
 
   const handleKioskSkip = useCallback(() => {
-    setKioskIndex((prev) => (prev + 1) % windows.length)
+    setKioskIndex((prev) => (prev + 1) % liveStreamWindows.length)
+    setTimeUntilNext(intervalMinutes * 60) // Reset timer on manual skip
+  }, [intervalMinutes])
+
+  const handleIntervalChange = useCallback((minutes: number) => {
+    setIntervalMinutes(minutes)
+    setTimeUntilNext(minutes * 60) // Reset countdown with new interval
   }, [])
 
   const handleWindowSelect = useCallback(() => {
@@ -82,7 +101,9 @@ export default function Home() {
                 isActive={kioskMode}
                 onToggle={handleKioskToggle}
                 onSkip={handleKioskSkip}
-                intervalMinutes={KIOSK_INTERVAL_MINUTES}
+                intervalMinutes={intervalMinutes}
+                onIntervalChange={handleIntervalChange}
+                timeUntilNext={timeUntilNext}
               />
 
               {/* Status Badge */}
