@@ -38,7 +38,7 @@ const audioSources: AudioSource[] = [
     id: "lofi",
     label: "LO-FI",
     icon: <Music className="h-4 w-4" />,
-    youtubeId: "jfKfPfyJRdk", // Lofi Girl
+    youtubeId: "CwPCy1GLS38", // Lofi Girl (updated)
   },
 ]
 

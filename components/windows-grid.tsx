@@ -22,8 +22,8 @@ export const windows: WindowItem[] = [
   // dfVK7ld38Ys = Shibuya Scramble Crossing (was mislabeled as Venice)
   { id: "shibuya", title: "Shibuya Scramble Crossing", subtitle: "Tokyo, Japan", videoId: "dfVK7ld38Ys" },
   
-  // BWnloy8r0qU = Yellowstone / Old Faithful (was mislabeled as Shibuya)
-  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "BWnloy8r0qU" },
+  // NUh7jIxvh2Q = Yellowstone / Old Faithful (updated live stream)
+  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "NUh7jIxvh2Q" },
   
   // LhNF-UFpWNY = Aurora Borealis (CORRECT)
   { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "LhNF-UFpWNY" },
