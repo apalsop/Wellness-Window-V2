@@ -32,7 +32,7 @@ export const windows: WindowItem[] = [
   // 6. Jackson Hole Town Square
   { id: "jackson-hole", title: "Jackson Hole Town Square", subtitle: "Wyoming, USA", videoId: "1EiC9bvVGnk" },
   // 7. Shibuya Scramble Crossing
-  { id: "shibuya", title: "Shibuya Scramble Crossing", subtitle: "Tokyo, Japan", videoId: "3Q5wZeTuttw" },
+  { id: "shibuya", title: "Shibuya Scramble Crossing", subtitle: "Tokyo, Japan", videoId: "dfVK7ld38Ys" },
   
   // === EUROPE & MIDDLE EAST (8-9) ===
   // 8. Ponte delle Guglie Venice
