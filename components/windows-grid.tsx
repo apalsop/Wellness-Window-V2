@@ -19,8 +19,8 @@ export const windows: WindowItem[] = [
   // 1EiC9bvVGnk = Jackson Hole Town Square (CORRECT)
   { id: "jackson-hole", title: "Jackson Hole Town Square", subtitle: "Wyoming, USA", videoId: "1EiC9bvVGnk" },
   
-  // dfVK7ld38Ys = Shibuya Scramble Crossing (was mislabeled as Venice)
-  { id: "shibuya", title: "Shibuya Scramble Crossing", subtitle: "Tokyo, Japan", videoId: "dfVK7ld38Ys" },
+  // 3Q5wZeTuttw = Shibuya Scramble Crossing from SHIBUYA SKY (updated)
+  { id: "shibuya", title: "Shibuya Scramble Crossing", subtitle: "Tokyo, Japan", videoId: "3Q5wZeTuttw" },
   
   // NUh7jIxvh2Q = Yellowstone / Old Faithful (updated live stream)
   { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "NUh7jIxvh2Q" },

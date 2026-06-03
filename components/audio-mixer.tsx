@@ -20,13 +20,13 @@ const audioSources: AudioSource[] = [
     id: "rain",
     label: "RAIN",
     icon: <CloudRain className="h-4 w-4" />,
-    youtubeId: "mPZkdNFkNps", // Rain sounds
+    youtubeId: "j2Fcjw-InxA", // Rain sounds 10 hours (updated)
   },
   {
     id: "waves",
     label: "WAVES",
     icon: <Waves className="h-4 w-4" />,
-    youtubeId: "WHPEKLQID4U", // Ocean waves
+    youtubeId: "Q9a86gbpbjU", // Ocean waves 6 hours (updated)
   },
   {
     id: "forest",
