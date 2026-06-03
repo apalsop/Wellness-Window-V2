@@ -21,8 +21,8 @@ export const windows: WindowItem[] = [
   { id: "sydney-harbour", title: "Sydney Harbour", subtitle: "Sydney, Australia", videoId: "5uZa3-RMFos" },
   // 2. Brisbane Weather
   { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "xVTqTwPLhOU" },
-  // 3. Bonny Hills Beach House NSW
-  { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "ORHR5vds40Y" },
+  // 3. Airlie Beach Queensland (replaced Bonny Hills - no embeddable stream)
+  { id: "airlie-beach", title: "Airlie Beach", subtitle: "Queensland, Australia", videoId: "4eyFQPhjHGc" },
   // 4. Southbank Melbourne
   { id: "melbourne", title: "Southbank Melbourne", subtitle: "Melbourne, Australia", videoId: "l_8DrACHpwY" },
   // 5. Mt Lawley, Perth
@@ -50,7 +50,7 @@ export const windows: WindowItem[] = [
   
   // === VOLCANOES & NATURE (13-16) ===
   // 13. Yellowstone National Park
-  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "NUh7jIxvh2Q" },
+  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "dBSIkHSqRYE" },
   // 14. Semeru Volcano Indonesia
   { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "CrVq7vy-fPE" },
   // 15. Iceberg Ilulissat Greenland
@@ -60,7 +60,7 @@ export const windows: WindowItem[] = [
   
   // === NORTHERN LIGHTS & SPACE (17-20) ===
   // 17. Aurora Borealis
-  { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "LhNF-UFpWNY" },
+  { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "E32xnBv0cwE" },
   // 18. Northern Lights Fairbanks Alaska
   { id: "fairbanks-aurora", title: "Northern Lights Fairbanks", subtitle: "Alaska, USA", videoId: "O52zDyxg5QI" },
   // 19. Earth from Space
@@ -71,8 +71,8 @@ export const windows: WindowItem[] = [
   // === WILDLIFE (21-25) ===
   // 21. Namibia Waterhole
   { id: "namibia", title: "Namibia Waterhole", subtitle: "Wildlife Watch - Africa", videoId: "ydYDqZQpim8" },
-  // 22. Anacapa Island Cove
-  { id: "anacapa", title: "Anacapa Island Cove", subtitle: "Channel Islands National Park", videoId: "aaUERtNMn7o" },
+  // 22. Anacapa Island Cove (replaced with Coral City Camera - Miami reef)
+  { id: "anacapa", title: "Coral City Camera", subtitle: "Miami Underwater Reef", videoId: "7i8ARjIeM2k" },
   // 23. Underwater Reef Cam
   { id: "underwater", title: "Underwater Reef Cam", subtitle: "Utopia Village, Honduras", videoId: "1zcIUk66HX4" },
   // 24. African Safari
