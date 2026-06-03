@@ -21,8 +21,8 @@ export const windows: WindowItem[] = [
   { id: "sydney-harbour", title: "Sydney Harbour", subtitle: "Sydney, Australia", videoId: "5uZa3-RMFos" },
   // 2. Brisbane Weather
   { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "xVTqTwPLhOU" },
-  // 3. Airlie Beach Queensland (replaced Bonny Hills - no embeddable stream)
-  { id: "airlie-beach", title: "Airlie Beach", subtitle: "Queensland, Australia", videoId: "4eyFQPhjHGc" },
+  // 3. Bonny Hills Beach House NSW
+  { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "HumG0ZUC78g" },
   // 4. Southbank Melbourne
   { id: "melbourne", title: "Southbank Melbourne", subtitle: "Melbourne, Australia", videoId: "l_8DrACHpwY" },
   // 5. Mt Lawley, Perth
