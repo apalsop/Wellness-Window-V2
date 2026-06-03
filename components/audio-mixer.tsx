@@ -20,13 +20,13 @@ const audioSources: AudioSource[] = [
     id: "rain",
     label: "RAIN",
     icon: <CloudRain className="h-4 w-4" />,
-    youtubeId: "mPZkdNFkNps", // Rain sounds
+    youtubeId: "j2Fcjw-InxA", // Rain sounds 10 hours (updated)
   },
   {
     id: "waves",
     label: "WAVES",
     icon: <Waves className="h-4 w-4" />,
-    youtubeId: "WHPEKLQID4U", // Ocean waves
+    youtubeId: "Q9a86gbpbjU", // Ocean waves 6 hours (updated)
   },
   {
     id: "forest",
@@ -38,7 +38,7 @@ const audioSources: AudioSource[] = [
     id: "lofi",
     label: "LO-FI",
     icon: <Music className="h-4 w-4" />,
-    youtubeId: "jfKfPfyJRdk", // Lofi Girl
+    youtubeId: "CwPCy1GLS38", // Lofi Girl (updated)
   },
 ]
 
@@ -109,13 +109,16 @@ export function AudioMixer() {
           <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
             <iframe
               ref={iframeRef}
-              src={`https://www.youtube.com/embed/${activeSource.youtubeId}?autoplay=1&loop=1&playlist=${activeSource.youtubeId}`}
+              src={`https://www.youtube.com/embed/${activeSource.youtubeId}?autoplay=1&mute=0&loop=1&playlist=${activeSource.youtubeId}&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
               title={activeSource.label}
               className="absolute inset-0 w-full h-full rounded-lg"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
           </div>
+          <p className="text-xs text-muted-foreground text-center mt-2">
+            If audio doesn&apos;t start, click the video once to enable playback
+          </p>
         </div>
       )}
     </div>

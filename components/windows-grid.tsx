@@ -16,54 +16,93 @@ export interface WindowItem {
 
 // Windows with CORRECT labels based on actual YouTube video titles
 export const windows: WindowItem[] = [
-  // 1EiC9bvVGnk = Jackson Hole Town Square (CORRECT)
-  { id: "jackson-hole", title: "Jackson Hole Town Square", subtitle: "Wyoming, USA", videoId: "1EiC9bvVGnk" },
+  // === AUSTRALIA (1-5) ===
+  // 1. Sydney Harbour
+  { id: "sydney-harbour", title: "Sydney Harbour", subtitle: "Sydney, Australia", videoId: "5uZa3-RMFos" },
+  // 2. Brisbane Weather
+  { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "xVTqTwPLhOU" },
+  // 3. Bonny Hills Beach House NSW
+  { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "HumG0ZUC78g" },
+  // 4. Southbank Melbourne
+  { id: "melbourne", title: "Southbank Melbourne", subtitle: "Melbourne, Australia", videoId: "l_8DrACHpwY" },
+  // 5. Mt Lawley, Perth
+  { id: "perth", title: "Mt Lawley, Perth", subtitle: "Perth, Australia", videoId: "uakxJIafWcw" },
   
-  // dfVK7ld38Ys = Shibuya Scramble Crossing (was mislabeled as Venice)
+  // === USA & JAPAN (6-7) ===
+  // 6. Jackson Hole Town Square
+  { id: "jackson-hole", title: "Jackson Hole Town Square", subtitle: "Wyoming, USA", videoId: "1EiC9bvVGnk" },
+  // 7. Shibuya Scramble Crossing
   { id: "shibuya", title: "Shibuya Scramble Crossing", subtitle: "Tokyo, Japan", videoId: "dfVK7ld38Ys" },
   
-  // BWnloy8r0qU = Yellowstone / Old Faithful (was mislabeled as Shibuya)
-  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "BWnloy8r0qU" },
+  // === EUROPE & MIDDLE EAST (8-9) ===
+  // 8. Ponte delle Guglie Venice
+  { id: "venice", title: "Ponte delle Guglie Venice", subtitle: "Hotel Leone, Venice", videoId: "mt7uE-n0YPI" },
+  // 9. Istanbul Galata & Kız Kulesi
+  { id: "istanbul", title: "Istanbul Galata & Kiz Kulesi", subtitle: "Istanbul, Turkey", videoId: "QeyayETx048" },
   
-  // LhNF-UFpWNY = Aurora Borealis (CORRECT)
-  { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "LhNF-UFpWNY" },
+  // === BEACHES & TROPICAL (10-12) ===
+  // 10. Los Angeles Venice Beach
+  { id: "venice-beach", title: "Los Angeles Venice Beach", subtitle: "Venice V Hotel, LA", videoId: "EO_1LWqsCNE" },
+  // 11. House of Sanskara, Koh Phangan
+  { id: "koh-phangan", title: "House of Sanskara", subtitle: "Koh Phangan, Thailand", videoId: "FBYUkqutqzE" },
+  // 12. Sitka, Alaska
+  { id: "sitka", title: "Sitka, Alaska", subtitle: "Alaska, USA", videoId: "sF5hFDGN20Y" },
   
-  // fO9e9jnhYK8 = Earth from ISS (was mislabeled as Yellowstone)
+  // === VOLCANOES & NATURE (13-16) ===
+  // 13. Yellowstone National Park
+  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "A0kI9N5mk-4" },
+  // 14. Semeru Volcano Indonesia
+  { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "CrVq7vy-fPE" },
+  // 15. Iceberg Ilulissat Greenland
+  { id: "greenland", title: "Iceberg Ilulissat", subtitle: "Greenland", videoId: "h8O0UXsL7uk" },
+  // 16. Kilauea Volcano Hawaii
+  { id: "kilauea", title: "Kilauea Volcano", subtitle: "Hawaii, USA", videoId: "6IaMqotNF_s" },
+  
+  // === NORTHERN LIGHTS & SPACE (17-20) ===
+  // 17. Aurora Borealis
+  { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "zvJ588R4uu8" },
+  // 18. Northern Lights Fairbanks Alaska
+  { id: "fairbanks-aurora", title: "Northern Lights Fairbanks", subtitle: "Alaska, USA", videoId: "O52zDyxg5QI" },
+  // 19. Earth from Space
   { id: "iss-earth", title: "Earth from Space", subtitle: "ISS Live 4K", videoId: "fO9e9jnhYK8" },
+  // 20. Earth from the International Space Station
+  { id: "iss-live", title: "Earth from ISS", subtitle: "International Space Station", videoId: "OKQEMp2555A" },
   
-  // ydYDqZQpim8 = Namibia Waterhole
+  // === WILDLIFE (21-26) ===
+  // 21. Namibia Waterhole
   { id: "namibia", title: "Namibia Waterhole", subtitle: "Wildlife Watch - Africa", videoId: "ydYDqZQpim8" },
-  
-  // aaUERtNMn7o = Anacapa Island Cove (CORRECT)
-  { id: "anacapa", title: "Anacapa Island Cove", subtitle: "Channel Islands National Park", videoId: "aaUERtNMn7o" },
-  
-  // 1zcIUk66HX4 = Underwater Reef Cam (CORRECT but better title)
+  // 22. Anacapa Island Cove
+  { id: "anacapa", title: "Anacapa Island Cove", subtitle: "Channel Islands National Park", videoId: "fAS2TFePbQk" },
+  // 23. Coral City Camera
+  { id: "coral-city", title: "Coral City Camera", subtitle: "Miami Underwater Reef", videoId: "7i8ARjIeM2k" },
+  // 24. Underwater Reef Cam
   { id: "underwater", title: "Underwater Reef Cam", subtitle: "Utopia Village, Honduras", videoId: "1zcIUk66HX4" },
-  
-  // LC-DK_22eK4 = African Safari Kenya (CORRECT)
+  // 25. African Safari
   { id: "kenya-safari", title: "African Safari", subtitle: "Kenya Wildlife - MPALA", videoId: "LC-DK_22eK4" },
-  
-  // oORXfTviuCs = Watering Hole Kenya (CORRECT)
+  // 26. Watering Hole
   { id: "kenya-waterhole", title: "Watering Hole", subtitle: "Kenya - MPALA", videoId: "oORXfTviuCs" },
   
-  // L_LUpnjgPso = Fireplace 10 hours (CORRECT)
+  // === AMBIENT VIDEOS (27-29) ===
+  // 27. Cozy Fireplace
   { id: "fireplace", title: "Cozy Fireplace", subtitle: "10 Hours Full HD", videoId: "L_LUpnjgPso" },
-  
-  // xNN7iTA57jM = Forest Sounds / Woodland Ambience (was mislabeled as Autumn Forest)
+  // 28. Woodland Ambience
   { id: "woodland", title: "Woodland Ambience", subtitle: "Forest Sounds & Bird Song", videoId: "xNN7iTA57jM" },
-  
-  // _1nnhg3JpwM = Redwood Forest Stream (USER PROVIDED CORRECT ID)
+  // 29. Redwood Forest
   { id: "redwood", title: "Redwood Forest", subtitle: "California Stream Ambience", videoId: "_1nnhg3JpwM" },
   
-  // External links with Unsplash images
+  // === EXTERNAL LINKS (30-33) ===
+  // 30. Random Window Swap
   { id: "window-swap", title: "Random Window Swap", subtitle: "Global Community Portal", externalUrl: "https://www.window-swap.com/window", thumbnailUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=320&h=180&fit=crop" },
+  // 31. City Drive & Radio
   { id: "drive-listen", title: "City Drive & Radio", subtitle: "Immersive City Streets", externalUrl: "https://driveandlisten.app/", thumbnailUrl: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=320&h=180&fit=crop" },
+  // 32. Virtual Walking Tour
   { id: "walking-tour", title: "Virtual Walking Tour", subtitle: "100+ Cities & Locations", externalUrl: "https://virtualvacation.us/walk", thumbnailUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=320&h=180&fit=crop" },
+  // 33. Airplane City Flyover
   { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/fly", thumbnailUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=320&h=180&fit=crop" },
 ]
 
-// Live streams for kiosk mode (first 10 windows - all live webcams/streams)
-export const liveStreamWindows = windows.slice(0, 10)
+// Live streams for kiosk mode (first 26 windows - all live webcams/streams, excluding ambient videos and external links)
+export const liveStreamWindows = windows.slice(0, 26)
 
 // Get YouTube thumbnail URL
 function getThumbnailUrl(window: WindowItem): string {
