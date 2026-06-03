@@ -68,39 +68,41 @@ export const windows: WindowItem[] = [
   // 20. Earth from the International Space Station
   { id: "iss-live", title: "Earth from ISS", subtitle: "International Space Station", videoId: "OKQEMp2555A" },
   
-  // === WILDLIFE (21-25) ===
+  // === WILDLIFE (21-26) ===
   // 21. Namibia Waterhole
   { id: "namibia", title: "Namibia Waterhole", subtitle: "Wildlife Watch - Africa", videoId: "ydYDqZQpim8" },
-  // 22. Anacapa Island Cove (replaced with Coral City Camera - Miami reef)
-  { id: "anacapa", title: "Coral City Camera", subtitle: "Miami Underwater Reef", videoId: "7i8ARjIeM2k" },
-  // 23. Underwater Reef Cam
+  // 22. Anacapa Island Cove
+  { id: "anacapa", title: "Anacapa Island Cove", subtitle: "Channel Islands National Park", videoId: "fAS2TFePbQk" },
+  // 23. Coral City Camera
+  { id: "coral-city", title: "Coral City Camera", subtitle: "Miami Underwater Reef", videoId: "7i8ARjIeM2k" },
+  // 24. Underwater Reef Cam
   { id: "underwater", title: "Underwater Reef Cam", subtitle: "Utopia Village, Honduras", videoId: "1zcIUk66HX4" },
-  // 24. African Safari
+  // 25. African Safari
   { id: "kenya-safari", title: "African Safari", subtitle: "Kenya Wildlife - MPALA", videoId: "LC-DK_22eK4" },
-  // 25. Watering Hole
+  // 26. Watering Hole
   { id: "kenya-waterhole", title: "Watering Hole", subtitle: "Kenya - MPALA", videoId: "oORXfTviuCs" },
   
-  // === AMBIENT VIDEOS (26-28) ===
-  // 26. Cozy Fireplace
+  // === AMBIENT VIDEOS (27-29) ===
+  // 27. Cozy Fireplace
   { id: "fireplace", title: "Cozy Fireplace", subtitle: "10 Hours Full HD", videoId: "L_LUpnjgPso" },
-  // 27. Woodland Ambience
+  // 28. Woodland Ambience
   { id: "woodland", title: "Woodland Ambience", subtitle: "Forest Sounds & Bird Song", videoId: "xNN7iTA57jM" },
-  // 28. Redwood Forest
+  // 29. Redwood Forest
   { id: "redwood", title: "Redwood Forest", subtitle: "California Stream Ambience", videoId: "_1nnhg3JpwM" },
   
-  // === EXTERNAL LINKS (29-32) ===
-  // 29. Random Window Swap
+  // === EXTERNAL LINKS (30-33) ===
+  // 30. Random Window Swap
   { id: "window-swap", title: "Random Window Swap", subtitle: "Global Community Portal", externalUrl: "https://www.window-swap.com/window", thumbnailUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=320&h=180&fit=crop" },
-  // 30. City Drive & Radio
+  // 31. City Drive & Radio
   { id: "drive-listen", title: "City Drive & Radio", subtitle: "Immersive City Streets", externalUrl: "https://driveandlisten.app/", thumbnailUrl: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=320&h=180&fit=crop" },
-  // 31. Virtual Walking Tour
+  // 32. Virtual Walking Tour
   { id: "walking-tour", title: "Virtual Walking Tour", subtitle: "100+ Cities & Locations", externalUrl: "https://virtualvacation.us/walk", thumbnailUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=320&h=180&fit=crop" },
-  // 32. Airplane City Flyover
+  // 33. Airplane City Flyover
   { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/fly", thumbnailUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=320&h=180&fit=crop" },
 ]
 
-// Live streams for kiosk mode (first 25 windows - all live webcams/streams, excluding ambient videos and external links)
-export const liveStreamWindows = windows.slice(0, 25)
+// Live streams for kiosk mode (first 26 windows - all live webcams/streams, excluding ambient videos and external links)
+export const liveStreamWindows = windows.slice(0, 26)
 
 // Get YouTube thumbnail URL
 function getThumbnailUrl(window: WindowItem): string {
