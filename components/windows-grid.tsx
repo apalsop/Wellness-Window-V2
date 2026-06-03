@@ -50,7 +50,7 @@ export const windows: WindowItem[] = [
   
   // === VOLCANOES & NATURE (13-16) ===
   // 13. Yellowstone National Park
-  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "dBSIkHSqRYE" },
+  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "A0kI9N5mk-4" },
   // 14. Semeru Volcano Indonesia
   { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "CrVq7vy-fPE" },
   // 15. Iceberg Ilulissat Greenland
