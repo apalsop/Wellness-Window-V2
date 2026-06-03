@@ -52,7 +52,7 @@ export const windows: WindowItem[] = [
   // 13. Yellowstone National Park
   { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "NUh7jIxvh2Q" },
   // 14. Semeru Volcano Indonesia
-  { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "NSo0IZv6f84", thumbnailUrl: "https://images.unsplash.com/photo-1580761814623-4a94e59c5e85?w=320&h=180&fit=crop" },
+  { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "CrVq7vy-fPE" },
   // 15. Iceberg Ilulissat Greenland
   { id: "greenland", title: "Iceberg Ilulissat", subtitle: "Greenland", videoId: "h8O0UXsL7uk" },
   // 16. Kilauea Volcano Hawaii
