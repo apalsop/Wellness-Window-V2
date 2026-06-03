@@ -109,13 +109,16 @@ export function AudioMixer() {
           <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
             <iframe
               ref={iframeRef}
-              src={`https://www.youtube.com/embed/${activeSource.youtubeId}?autoplay=1&loop=1&playlist=${activeSource.youtubeId}`}
+              src={`https://www.youtube.com/embed/${activeSource.youtubeId}?autoplay=1&mute=0&loop=1&playlist=${activeSource.youtubeId}&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
               title={activeSource.label}
               className="absolute inset-0 w-full h-full rounded-lg"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
           </div>
+          <p className="text-xs text-muted-foreground text-center mt-2">
+            If audio doesn&apos;t start, click the video once to enable playback
+          </p>
         </div>
       )}
     </div>
