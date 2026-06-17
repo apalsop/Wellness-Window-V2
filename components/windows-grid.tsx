@@ -20,9 +20,9 @@ export const windows: WindowItem[] = [
   // 1. Sydney Harbour
   { id: "sydney-harbour", title: "Sydney Harbour", subtitle: "Sydney, Australia", videoId: "5uZa3-RMFos" },
   // 2. Brisbane Weather
-  { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "xVTqTwPLhOU" },
+  { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "9BO8BMIN8U4" },
   // 3. Bonny Hills Beach House NSW
-  { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "HumG0ZUC78g" },
+  { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "EYlLnyqjwh4" },
   // 4. Southbank Melbourne
   { id: "melbourne", title: "Southbank Melbourne", subtitle: "Melbourne, Australia", videoId: "l_8DrACHpwY" },
   // 5. Mt Lawley, Perth
@@ -38,77 +38,83 @@ export const windows: WindowItem[] = [
   // 8. Ponte delle Guglie Venice
   { id: "venice", title: "Ponte delle Guglie Venice", subtitle: "Hotel Leone, Venice", videoId: "mt7uE-n0YPI" },
   // 9. Istanbul Galata & Kız Kulesi
-  { id: "istanbul", title: "Istanbul Galata & Kiz Kulesi", subtitle: "Istanbul, Turkey", videoId: "QeyayETx048" },
+  { id: "istanbul", title: "Istanbul Galata & Kiz Kulesi", subtitle: "Istanbul, Turkey", videoId: "7Gf1e8XTpHY" },
   
-  // === BEACHES & TROPICAL (10-13) ===
+  // === BEACHES & TROPICAL (10-16) ===
   // 10. Los Angeles Venice Beach
   { id: "venice-beach", title: "Los Angeles Venice Beach", subtitle: "Venice V Hotel, LA", videoId: "EO_1LWqsCNE" },
   // 11. House of Sanskara, Koh Phangan
   { id: "koh-phangan", title: "House of Sanskara", subtitle: "Koh Phangan, Thailand", videoId: "FBYUkqutqzE" },
-  // 12. Nha Trang, Vietnam
+  // 12. Crystal Bay Beach Resort, Lamai Koh Samui
+  { id: "crystal-bay-beach", title: "Crystal Bay Beach Resort", subtitle: "Lamai, Koh Samui, Thailand", videoId: "Fw9hgttWzIg" },
+  // 13. Crystal Bay Yacht Club, Lamai Koh Samui
+  { id: "crystal-bay-yacht", title: "Crystal Bay Yacht Club", subtitle: "Lamai, Koh Samui, Thailand", videoId: "kkVrj2cr9Ko" },
+  // 14. Baobab, Lamai Koh Samui
+  { id: "baobab-lamai", title: "Baobab", subtitle: "Lamai, Koh Samui, Thailand", videoId: "Tpj0cmMVOd0" },
+  // 15. Nha Trang, Vietnam
   { id: "nha-trang", title: "Nha Trang", subtitle: "Vietnam", videoId: "SCpZOgLKVfY" },
-  // 13. Sitka, Alaska
+  // 16. Sitka, Alaska
   { id: "sitka", title: "Sitka, Alaska", subtitle: "Alaska, USA", videoId: "sF5hFDGN20Y" },
   
-  // === VOLCANOES & NATURE (14-17) ===
-  // 14. Yellowstone National Park
-  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "A0kI9N5mk-4" },
-  // 15. Semeru Volcano Indonesia
+  // === VOLCANOES & NATURE (17-20) ===
+  // 17. Yellowstone National Park
+  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "dN1uDn-Luno" },
+  // 18. Semeru Volcano Indonesia
   { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "CrVq7vy-fPE" },
-  // 16. Iceberg Ilulissat Greenland
+  // 19. Iceberg Ilulissat Greenland
   { id: "greenland", title: "Iceberg Ilulissat", subtitle: "Greenland", videoId: "h8O0UXsL7uk" },
-  // 17. Kilauea Volcano Hawaii
+  // 20. Kilauea Volcano Hawaii
   { id: "kilauea", title: "Kilauea Volcano", subtitle: "Hawaii, USA", videoId: "6IaMqotNF_s" },
   
-  // === NORTHERN LIGHTS & SPACE (18-21) ===
-  // 18. Aurora Borealis
-  { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "zvJ588R4uu8" },
-  // 19. Northern Lights Fairbanks Alaska
+  // === NORTHERN LIGHTS & SPACE (21-24) ===
+  // 21. Aurora Borealis
+  { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "9TjOeBK14-I" },
+  // 22. Northern Lights Fairbanks Alaska
   { id: "fairbanks-aurora", title: "Northern Lights Fairbanks", subtitle: "Alaska, USA", videoId: "O52zDyxg5QI" },
-  // 20. Earth from Space
+  // 23. Earth from Space
   { id: "iss-earth", title: "Earth from Space", subtitle: "ISS Live 4K", videoId: "fO9e9jnhYK8" },
-  // 21. Earth from the International Space Station
+  // 24. Earth from the International Space Station
   { id: "iss-live", title: "Earth from ISS", subtitle: "International Space Station", videoId: "OKQEMp2555A" },
   
-  // === WILDLIFE (22-29) ===
-  // 22. Awaji Island Monkey Center
+  // === WILDLIFE (25-32) ===
+  // 25. Awaji Island Monkey Center
   { id: "awaji-monkey", title: "Awaji Island Monkey Center", subtitle: "Awaji Island, Japan", videoId: "lsxYH2XQQCg" },
-  // 23. Furball Farm Cat Sanctuary
+  // 26. Furball Farm Cat Sanctuary
   { id: "furball-farm", title: "Furball Farm Cat Sanctuary", subtitle: "Minnesota, USA", videoId: "e9C9K8ltDfk" },
-  // 24. Namibia Waterhole
+  // 27. Namibia Waterhole
   { id: "namibia", title: "Namibia Waterhole", subtitle: "Wildlife Watch - Africa", videoId: "ydYDqZQpim8" },
-  // 25. Anacapa Island Cove
+  // 28. Anacapa Island Cove
   { id: "anacapa", title: "Anacapa Island Cove", subtitle: "Channel Islands National Park", videoId: "fAS2TFePbQk" },
-  // 26. Coral City Camera
+  // 29. Coral City Camera
   { id: "coral-city", title: "Coral City Camera", subtitle: "Miami Underwater Reef", videoId: "7i8ARjIeM2k" },
-  // 27. Underwater Reef Cam
+  // 30. Underwater Reef Cam
   { id: "underwater", title: "Underwater Reef Cam", subtitle: "Utopia Village, Honduras", videoId: "1zcIUk66HX4" },
-  // 28. African Safari
+  // 31. African Safari
   { id: "kenya-safari", title: "African Safari", subtitle: "Kenya Wildlife - MPALA", videoId: "LC-DK_22eK4" },
-  // 29. Watering Hole
+  // 32. Watering Hole
   { id: "kenya-waterhole", title: "Watering Hole", subtitle: "Kenya - MPALA", videoId: "oORXfTviuCs" },
   
-  // === AMBIENT VIDEOS (30-32) ===
-  // 30. Cozy Fireplace
+  // === AMBIENT VIDEOS (33-35) ===
+  // 33. Cozy Fireplace
   { id: "fireplace", title: "Cozy Fireplace", subtitle: "10 Hours Full HD", videoId: "L_LUpnjgPso" },
-  // 31. Woodland Ambience
+  // 34. Woodland Ambience
   { id: "woodland", title: "Woodland Ambience", subtitle: "Forest Sounds & Bird Song", videoId: "xNN7iTA57jM" },
-  // 32. Redwood Forest
+  // 35. Redwood Forest
   { id: "redwood", title: "Redwood Forest", subtitle: "California Stream Ambience", videoId: "_1nnhg3JpwM" },
   
-  // === EXTERNAL LINKS (33-36) ===
-  // 33. Random Window Swap
+  // === EXTERNAL LINKS (36-39) ===
+  // 36. Random Window Swap
   { id: "window-swap", title: "Random Window Swap", subtitle: "Global Community Portal", externalUrl: "https://www.window-swap.com/window", thumbnailUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=320&h=180&fit=crop" },
-  // 34. City Drive & Radio
+  // 37. City Drive & Radio
   { id: "drive-listen", title: "City Drive & Radio", subtitle: "Immersive City Streets", externalUrl: "https://driveandlisten.app/", thumbnailUrl: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=320&h=180&fit=crop" },
-  // 35. Virtual Walking Tour
+  // 38. Virtual Walking Tour
   { id: "walking-tour", title: "Virtual Walking Tour", subtitle: "100+ Cities & Locations", externalUrl: "https://virtualvacation.us/walk", thumbnailUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=320&h=180&fit=crop" },
-  // 36. Airplane City Flyover
+  // 39. Airplane City Flyover
   { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/fly", thumbnailUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=320&h=180&fit=crop" },
 ]
 
-// Live streams for kiosk mode (first 29 windows - all live webcams/streams, excluding ambient videos and external links)
-export const liveStreamWindows = windows.slice(0, 29)
+// Live streams for kiosk mode (first 32 windows - all live webcams/streams, excluding ambient videos and external links)
+export const liveStreamWindows = windows.slice(0, 32)
 
 // Get YouTube thumbnail URL
 function getThumbnailUrl(window: WindowItem): string {
