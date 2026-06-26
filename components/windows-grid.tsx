@@ -183,15 +183,22 @@ export function WindowsGrid({ kioskMode, currentKioskIndex, onWindowSelect }: Wi
         </div>
       )}
 
-      {/* Video Player */}
+      {/* Video Player - sticky so it stays visible while scrolling the grid below */}
       {activeWindow && activeWindow.videoId && (
-        <VideoPlayer
-          videoId={activeWindow.videoId}
-          title={activeWindow.title}
-          onClose={handleClose}
-          isFullscreen={isFullscreen}
-          onToggleFullscreen={() => setIsFullscreen(!isFullscreen)}
-        />
+        <div
+          className={cn(
+            !isFullscreen &&
+              "sticky top-2 z-30 mx-auto w-full max-w-3xl rounded-lg shadow-2xl"
+          )}
+        >
+          <VideoPlayer
+            videoId={activeWindow.videoId}
+            title={activeWindow.title}
+            onClose={handleClose}
+            isFullscreen={isFullscreen}
+            onToggleFullscreen={() => setIsFullscreen(!isFullscreen)}
+          />
+        </div>
       )}
 
       {/* Windows Grid with Thumbnails */}
