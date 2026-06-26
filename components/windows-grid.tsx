@@ -72,65 +72,69 @@ export const windows: WindowItem[] = [
   // 23. Sitka, Alaska
   { id: "sitka", title: "Sitka, Alaska", subtitle: "Alaska, USA", videoId: "sF5hFDGN20Y" },
   
-  // === VOLCANOES & NATURE (24-27) ===
+  // === VOLCANOES & NATURE (24-29) ===
   // 24. Yellowstone National Park
   { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "dN1uDn-Luno" },
-  // 25. Semeru Volcano Indonesia
+  // 25. Niagara Falls
+  { id: "niagara-falls", title: "Niagara Falls", subtitle: "Ontario / New York", videoId: "qx7gry390YA" },
+  // 26. Snowman Cam, Gaylord Michigan
+  { id: "snowman-cam", title: "Snowman Cam", subtitle: "Animals & Wildlife - Gaylord, Michigan", videoId: "y96JqPFif64" },
+  // 27. Semeru Volcano Indonesia
   { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "CrVq7vy-fPE" },
-  // 26. Iceberg Ilulissat Greenland
+  // 28. Iceberg Ilulissat Greenland
   { id: "greenland", title: "Iceberg Ilulissat", subtitle: "Greenland", videoId: "h8O0UXsL7uk" },
-  // 27. Kilauea Volcano Hawaii
+  // 29. Kilauea Volcano Hawaii
   { id: "kilauea", title: "Kilauea Volcano", subtitle: "Hawaii, USA", videoId: "6IaMqotNF_s" },
   
-  // === NORTHERN LIGHTS & SPACE (28-31) ===
-  // 28. Aurora Borealis
+  // === NORTHERN LIGHTS & SPACE (30-33) ===
+  // 30. Aurora Borealis
   { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "9TjOeBK14-I" },
-  // 29. Northern Lights Fairbanks Alaska
+  // 31. Northern Lights Fairbanks Alaska
   { id: "fairbanks-aurora", title: "Northern Lights Fairbanks", subtitle: "Alaska, USA", videoId: "O52zDyxg5QI" },
-  // 30. Earth from Space
+  // 32. Earth from Space
   { id: "iss-earth", title: "Earth from Space", subtitle: "ISS Live 4K", videoId: "fO9e9jnhYK8" },
-  // 31. Earth from the International Space Station
+  // 33. Earth from the International Space Station
   { id: "iss-live", title: "Earth from ISS", subtitle: "International Space Station", videoId: "OKQEMp2555A" },
   
-  // === WILDLIFE (32-39) ===
-  // 32. Awaji Island Monkey Center
+  // === WILDLIFE (34-41) ===
+  // 34. Awaji Island Monkey Center
   { id: "awaji-monkey", title: "Awaji Island Monkey Center", subtitle: "Awaji Island, Japan", videoId: "lsxYH2XQQCg" },
-  // 33. Furball Farm Cat Sanctuary
+  // 35. Furball Farm Cat Sanctuary
   { id: "furball-farm", title: "Furball Farm Cat Sanctuary", subtitle: "Minnesota, USA", videoId: "e9C9K8ltDfk" },
-  // 34. Namibia Waterhole
+  // 36. Namibia Waterhole
   { id: "namibia", title: "Namibia Waterhole", subtitle: "Wildlife Watch - Africa", videoId: "ydYDqZQpim8" },
-  // 35. Anacapa Island Cove
+  // 37. Anacapa Island Cove
   { id: "anacapa", title: "Anacapa Island Cove", subtitle: "Channel Islands National Park", videoId: "fAS2TFePbQk" },
-  // 36. Coral City Camera
+  // 38. Coral City Camera
   { id: "coral-city", title: "Coral City Camera", subtitle: "Miami Underwater Reef", videoId: "7i8ARjIeM2k" },
-  // 37. Underwater Reef Cam
+  // 39. Underwater Reef Cam
   { id: "underwater", title: "Underwater Reef Cam", subtitle: "Utopia Village, Honduras", videoId: "1zcIUk66HX4" },
-  // 38. African Safari
+  // 40. African Safari
   { id: "kenya-safari", title: "African Safari", subtitle: "Kenya Wildlife - MPALA", videoId: "LC-DK_22eK4" },
-  // 39. Watering Hole
+  // 41. Watering Hole
   { id: "kenya-waterhole", title: "Watering Hole", subtitle: "Kenya - MPALA", videoId: "oORXfTviuCs" },
   
-  // === AMBIENT VIDEOS (40-42) ===
-  // 40. Cozy Fireplace
+  // === AMBIENT VIDEOS (42-44) ===
+  // 42. Cozy Fireplace
   { id: "fireplace", title: "Cozy Fireplace", subtitle: "10 Hours Full HD", videoId: "L_LUpnjgPso" },
-  // 41. Woodland Ambience
+  // 43. Woodland Ambience
   { id: "woodland", title: "Woodland Ambience", subtitle: "Forest Sounds & Bird Song", videoId: "xNN7iTA57jM" },
-  // 42. Redwood Forest
+  // 44. Redwood Forest
   { id: "redwood", title: "Redwood Forest", subtitle: "California Stream Ambience", videoId: "_1nnhg3JpwM" },
   
-  // === EXTERNAL LINKS (43-46) ===
-  // 43. Random Window Swap
+  // === EXTERNAL LINKS (45-48) ===
+  // 45. Random Window Swap
   { id: "window-swap", title: "Random Window Swap", subtitle: "Global Community Portal", externalUrl: "https://www.window-swap.com/window", thumbnailUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=320&h=180&fit=crop" },
-  // 44. City Drive & Radio
+  // 46. City Drive & Radio
   { id: "drive-listen", title: "City Drive & Radio", subtitle: "Immersive City Streets", externalUrl: "https://driveandlisten.app/", thumbnailUrl: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=320&h=180&fit=crop" },
-  // 45. Virtual Walking Tour
+  // 47. Virtual Walking Tour
   { id: "walking-tour", title: "Virtual Walking Tour", subtitle: "100+ Cities & Locations", externalUrl: "https://virtualvacation.us/walk", thumbnailUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=320&h=180&fit=crop" },
-  // 46. Airplane City Flyover
+  // 48. Airplane City Flyover
   { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/fly", thumbnailUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=320&h=180&fit=crop" },
 ]
 
-// Live streams for kiosk mode (first 39 windows - all live webcams/streams, excluding ambient videos and external links)
-export const liveStreamWindows = windows.slice(0, 39)
+// Live streams for kiosk mode (first 41 windows - all live webcams/streams, excluding ambient videos and external links)
+export const liveStreamWindows = windows.slice(0, 41)
 
 // Get YouTube thumbnail URL
 function getThumbnailUrl(window: WindowItem): string {
