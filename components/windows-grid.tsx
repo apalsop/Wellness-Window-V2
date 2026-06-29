@@ -58,7 +58,7 @@ export const windows: WindowItem[] = [
   // 16. Los Angeles Venice Beach
   { id: "venice-beach", title: "Los Angeles Venice Beach", subtitle: "Venice V Hotel, LA", videoId: "EO_1LWqsCNE" },
   // 17. House of Sanskara, Koh Phangan
-  { id: "koh-phangan", title: "House of Sanskara", subtitle: "Koh Phangan, Thailand", videoId: "FBYUkqutqzE" },
+  { id: "koh-phangan", title: "House of Sanskara", subtitle: "Koh Phangan, Thailand", videoId: "MW3fisTCXRQ" },
   // 18. Crystal Bay Beach Resort, Lamai Koh Samui
   { id: "crystal-bay-beach", title: "Crystal Bay Beach Resort", subtitle: "Lamai, Koh Samui, Thailand", videoId: "Fw9hgttWzIg" },
   // 19. Baobab, Lamai Koh Samui
