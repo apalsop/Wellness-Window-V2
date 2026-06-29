@@ -20,9 +20,9 @@ export const windows: WindowItem[] = [
   // 1. Sydney Harbour
   { id: "sydney-harbour", title: "Sydney Harbour", subtitle: "Sydney, Australia", videoId: "5uZa3-RMFos" },
   // 2. Brisbane Weather
-  { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "9BO8BMIN8U4" },
+  { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "I-_605hGTEM" },
   // 3. Bonny Hills Beach House NSW
-  { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "EYlLnyqjwh4" },
+  { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "52189AVAFxg" },
   // 4. Southbank Melbourne
   { id: "melbourne", title: "Southbank Melbourne", subtitle: "Melbourne, Australia", videoId: "l_8DrACHpwY" },
   // 5. Mt Lawley, Perth
@@ -58,7 +58,7 @@ export const windows: WindowItem[] = [
   // 16. Los Angeles Venice Beach
   { id: "venice-beach", title: "Los Angeles Venice Beach", subtitle: "Venice V Hotel, LA", videoId: "EO_1LWqsCNE" },
   // 17. House of Sanskara, Koh Phangan
-  { id: "koh-phangan", title: "House of Sanskara", subtitle: "Koh Phangan, Thailand", videoId: "FBYUkqutqzE" },
+  { id: "koh-phangan", title: "House of Sanskara", subtitle: "Koh Phangan, Thailand", videoId: "MW3fisTCXRQ" },
   // 18. Crystal Bay Beach Resort, Lamai Koh Samui
   { id: "crystal-bay-beach", title: "Crystal Bay Beach Resort", subtitle: "Lamai, Koh Samui, Thailand", videoId: "Fw9hgttWzIg" },
   // 19. Baobab, Lamai Koh Samui
@@ -80,7 +80,7 @@ export const windows: WindowItem[] = [
   // 26. Snowman Cam, Gaylord Michigan
   { id: "snowman-cam", title: "Snowman Cam", subtitle: "Animals & Wildlife - Gaylord, Michigan", videoId: "y96JqPFif64" },
   // 27. Semeru Volcano Indonesia
-  { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "CrVq7vy-fPE" },
+  { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "LqcmDDUH1oY" },
   // 28. Iceberg Ilulissat Greenland
   { id: "greenland", title: "Iceberg Ilulissat", subtitle: "Greenland", videoId: "h8O0UXsL7uk" },
   // 29. Kilauea Volcano Hawaii
@@ -88,7 +88,7 @@ export const windows: WindowItem[] = [
   
   // === NORTHERN LIGHTS & SPACE (30-33) ===
   // 30. Aurora Borealis
-  { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "9TjOeBK14-I" },
+  { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "AWqY7wLUWW8" },
   // 31. Northern Lights Fairbanks Alaska
   { id: "fairbanks-aurora", title: "Northern Lights Fairbanks", subtitle: "Alaska, USA", videoId: "O52zDyxg5QI" },
   // 32. Earth from Space
