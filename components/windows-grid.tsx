@@ -124,7 +124,7 @@ export const windows: WindowItem[] = [
   
   // === EXTERNAL LINKS (45-48) ===
   // 45. Random Window Swap
-  { id: "window-swap", title: "Random Window Swap", subtitle: "Global Community Portal", externalUrl: "https://www.window-swap.com/window", thumbnailUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=320&h=180&fit=crop" },
+  { id: "window-swap", title: "Random Window Swap", subtitle: "Global Community Portal", externalUrl: "https://window-swap.com/", thumbnailUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=320&h=180&fit=crop" },
   // 46. City Drive & Radio
   { id: "drive-listen", title: "City Drive & Radio", subtitle: "Immersive City Streets", externalUrl: "https://driveandlisten.app/", thumbnailUrl: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=320&h=180&fit=crop" },
   // 47. Virtual Walking Tour
