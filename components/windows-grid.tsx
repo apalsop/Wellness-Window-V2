@@ -20,7 +20,7 @@ export const windows: WindowItem[] = [
   // 1. Sydney Harbour
   { id: "sydney-harbour", title: "Sydney Harbour", subtitle: "Sydney, Australia", videoId: "5uZa3-RMFos" },
   // 2. Brisbane Weather
-  { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "I-_605hGTEM" },
+  { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "o1LRcS28T2M" },
   // 3. Bonny Hills Beach House NSW
   { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "52189AVAFxg" },
   // 4. Southbank Melbourne
@@ -47,8 +47,10 @@ export const windows: WindowItem[] = [
   { id: "jackson-hole", title: "Jackson Hole Town Square", subtitle: "Wyoming, USA", videoId: "1EiC9bvVGnk" },
   // 13. Shibuya Scramble Crossing
   { id: "shibuya", title: "Shibuya Scramble Crossing", subtitle: "Tokyo, Japan", videoId: "dfVK7ld38Ys" },
+  // 14. Brunnsparken, Varberg
+  { id: "brunnsparken-varberg", title: "Brunnsparken", subtitle: "Varberg, Sweden", videoId: "IEDF51akADs" },
   
-  // === EUROPE & MIDDLE EAST (14-15) ===
+  // === EUROPE & MIDDLE EAST (15-16) ===
   // 14. Ponte delle Guglie Venice
   { id: "venice", title: "Ponte delle Guglie Venice", subtitle: "Hotel Leone, Venice", videoId: "mt7uE-n0YPI" },
   // 15. Istanbul Galata & Kız Kulesi
@@ -133,8 +135,8 @@ export const windows: WindowItem[] = [
   { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/fly", thumbnailUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=320&h=180&fit=crop" },
 ]
 
-// Live streams for kiosk mode (first 41 windows - all live webcams/streams, excluding ambient videos and external links)
-export const liveStreamWindows = windows.slice(0, 41)
+// Live streams for kiosk mode (first 42 windows - all live webcams/streams, excluding ambient videos and external links)
+export const liveStreamWindows = windows.slice(0, 42)
 
 // Get YouTube thumbnail URL
 function getThumbnailUrl(window: WindowItem): string {
