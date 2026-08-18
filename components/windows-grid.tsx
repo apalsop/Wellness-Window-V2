@@ -22,7 +22,7 @@ export const windows: WindowItem[] = [
   // 2. Brisbane Weather
   { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "o1LRcS28T2M" },
   // 3. Bonny Hills Beach House NSW
-  { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "52189AVAFxg" },
+  { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "D_9QJlYvotE" },
   // 4. Southbank Melbourne
   { id: "melbourne", title: "Southbank Melbourne", subtitle: "Melbourne, Australia", videoId: "l_8DrACHpwY" },
   // 5. Mt Lawley, Perth
