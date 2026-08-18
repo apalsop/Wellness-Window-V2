@@ -22,7 +22,7 @@ export const windows: WindowItem[] = [
   // 2. Brisbane Weather
   { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "o1LRcS28T2M" },
   // 3. Bonny Hills Beach House NSW
-  { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "52189AVAFxg" },
+  { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "D_9QJlYvotE" },
   // 4. Southbank Melbourne
   { id: "melbourne", title: "Southbank Melbourne", subtitle: "Melbourne, Australia", videoId: "l_8DrACHpwY" },
   // 5. Mt Lawley, Perth
@@ -36,11 +36,11 @@ export const windows: WindowItem[] = [
   // 8. Washington Monument, D.C.
   { id: "washington-monument", title: "Washington Monument", subtitle: "Washington, D.C., USA", videoId: "oDCAAfOSqvA" },
   // 9. Statue of Liberty
-  { id: "statue-liberty", title: "Statue of Liberty", subtitle: "New York City, USA", videoId: "cWR8KGKftUw" },
+  { id: "statue-liberty", title: "Statue of Liberty", subtitle: "New York City, USA", videoId: "YHRYOL03ydw" },
   // 10. Coney Island, NYC
   { id: "coney-island", title: "Coney Island", subtitle: "New York City, USA", videoId: "H67j7H-7QD0" },
   // 11. Abbey Road Crossing, London
-  { id: "abbey-road", title: "Abbey Road Crossing", subtitle: "London, England", videoId: "M3EYAY2MftI" },
+  { id: "abbey-road", title: "Abbey Road Crossing", subtitle: "London, England", videoId: "zMCea32gpmg" },
   
   // === USA & JAPAN (12-13) ===
   // 12. Jackson Hole Town Square
@@ -54,7 +54,7 @@ export const windows: WindowItem[] = [
   // 14. Ponte delle Guglie Venice
   { id: "venice", title: "Ponte delle Guglie Venice", subtitle: "Hotel Leone, Venice", videoId: "mt7uE-n0YPI" },
   // 15. Istanbul Galata & Kız Kulesi
-  { id: "istanbul", title: "Istanbul Galata & Kiz Kulesi", subtitle: "Istanbul, Turkey", videoId: "7Gf1e8XTpHY" },
+  { id: "istanbul", title: "Istanbul Galata & Kiz Kulesi", subtitle: "Istanbul, Turkey", videoId: "ISbFG99f4Mg" },
   
   // === BEACHES & TROPICAL (16-23) ===
   // 16. Los Angeles Venice Beach
@@ -66,21 +66,23 @@ export const windows: WindowItem[] = [
   // 19. Baobab, Lamai Koh Samui
   { id: "baobab-lamai", title: "Baobab", subtitle: "Lamai, Koh Samui, Thailand", videoId: "Tpj0cmMVOd0" },
   // 20. Nha Trang, Vietnam
-  { id: "nha-trang", title: "Nha Trang", subtitle: "Vietnam", videoId: "SCpZOgLKVfY" },
+  { id: "nha-trang", title: "Nha Trang", subtitle: "Vietnam", videoId: "BCTGxf6324o" },
   // 21. Sint Maarten, Philipsburg
-  { id: "sint-maarten", title: "Sint Maarten", subtitle: "Philipsburg, Caribbean", videoId: "IQNldL1LNzc" },
+  { id: "sint-maarten", title: "Sint Maarten", subtitle: "Philipsburg, Caribbean", videoId: "N5Mb2bjYwZo" },
   // 22. Tamariu, Spain
   { id: "tamariu", title: "Tamariu", subtitle: "Costa Brava, Spain", videoId: "PMhVgTcDd1o" },
   // 23. Sitka, Alaska
   { id: "sitka", title: "Sitka, Alaska", subtitle: "Alaska, USA", videoId: "sF5hFDGN20Y" },
   
-  // === VOLCANOES & NATURE (24-29) ===
+  // === VOLCANOES, NATURE & WILDLIFE (24-30) ===
   // 24. Yellowstone National Park
-  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "dN1uDn-Luno" },
-  // 25. Niagara Falls
+  { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "mWUklUMSXZE" },
+  // 25. Brooks Falls
+  { id: "brooks-falls", title: "Brooks Falls", subtitle: "Katmai National Park, Alaska", videoId: "J7ZrIDvqlic" },
+  // 26. Niagara Falls
   { id: "niagara-falls", title: "Niagara Falls", subtitle: "Ontario / New York", videoId: "qx7gry390YA" },
-  // 26. Snowman Cam, Gaylord Michigan
-  { id: "snowman-cam", title: "Snowman Cam", subtitle: "Animals & Wildlife - Gaylord, Michigan", videoId: "y96JqPFif64" },
+  // 27. Snowman Cam, Gaylord Michigan
+  { id: "snowman-cam", title: "Snowman Cam", subtitle: "Animals & Wildlife - Gaylord, Michigan", videoId: "IU_-Pl9O5jQ" },
   // 27. Semeru Volcano Indonesia
   { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "1rbBmhRQ5Gs" },
   // 28. Iceberg Ilulissat Greenland
@@ -135,8 +137,8 @@ export const windows: WindowItem[] = [
   { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/fly", thumbnailUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=320&h=180&fit=crop" },
 ]
 
-// Live streams for kiosk mode (first 42 windows - all live webcams/streams, excluding ambient videos and external links)
-export const liveStreamWindows = windows.slice(0, 42)
+// Live streams for kiosk mode (first 43 windows - all live webcams/streams, excluding ambient videos and external links)
+export const liveStreamWindows = windows.slice(0, 43)
 
 // Get YouTube thumbnail URL
 function getThumbnailUrl(window: WindowItem): string {
