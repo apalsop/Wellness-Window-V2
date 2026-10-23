@@ -84,7 +84,7 @@ export const windows: WindowItem[] = [
   // 27. Snowman Cam, Gaylord Michigan
   { id: "snowman-cam", title: "Snowman Cam", subtitle: "Animals & Wildlife - Gaylord, Michigan", videoId: "IU_-Pl9O5jQ" },
   // 27. Semeru Volcano Indonesia
-  { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "1rbBmhRQ5Gs" },
+  { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "2E7jzu5mP-o" },
   // 28. Iceberg Ilulissat Greenland
   { id: "greenland", title: "Iceberg Ilulissat", subtitle: "Greenland", videoId: "h8O0UXsL7uk" },
   // 29. Kilauea Volcano Hawaii
