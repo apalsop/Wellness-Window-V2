@@ -66,7 +66,7 @@ export const windows: WindowItem[] = [
   // 19. Baobab, Lamai Koh Samui
   { id: "baobab-lamai", title: "Baobab", subtitle: "Lamai, Koh Samui, Thailand", videoId: "Tpj0cmMVOd0" },
   // 20. Nha Trang, Vietnam
-  { id: "nha-trang", title: "Nha Trang", subtitle: "Vietnam", videoId: "BCTGxf6324o" },
+  { id: "nha-trang", title: "Nha Trang", subtitle: "Vietnam", videoId: "n8lmPY3dEfA" },
   // 21. Sint Maarten, Philipsburg
   { id: "sint-maarten", title: "Sint Maarten", subtitle: "Philipsburg, Caribbean", videoId: "N5Mb2bjYwZo" },
   // 22. Tamariu, Spain
