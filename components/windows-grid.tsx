@@ -36,7 +36,7 @@ export const windows: WindowItem[] = [
   // 8. Washington Monument, D.C.
   { id: "washington-monument", title: "Washington Monument", subtitle: "Washington, D.C., USA", videoId: "oDCAAfOSqvA" },
   // 9. Statue of Liberty
-  { id: "statue-liberty", title: "Statue of Liberty", subtitle: "New York City, USA", videoId: "YHRYOL03ydw" },
+  { id: "statue-liberty", title: "Statue of Liberty", subtitle: "New York City, USA", videoId: "o5Ie_LpZ9uk" },
   // 10. Coney Island, NYC
   { id: "coney-island", title: "Coney Island", subtitle: "New York City, USA", videoId: "H67j7H-7QD0" },
   // 11. Abbey Road Crossing, London
