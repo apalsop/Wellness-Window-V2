@@ -86,7 +86,7 @@ export const windows: WindowItem[] = [
   // 27. Semeru Volcano Indonesia
   { id: "semeru", title: "Semeru Volcano", subtitle: "Indonesia", videoId: "2E7jzu5mP-o" },
   // 28. Iceberg Ilulissat Greenland
-  { id: "greenland", title: "Iceberg Ilulissat", subtitle: "Greenland", videoId: "h8O0UXsL7uk" },
+  { id: "greenland", title: "Iceberg Ilulissat", subtitle: "Greenland", videoId: "VVa_nZtUofE" },
   // 29. Kilauea Volcano Hawaii
   { id: "kilauea", title: "Kilauea Volcano", subtitle: "Hawaii, USA", videoId: "6IaMqotNF_s" },
   
