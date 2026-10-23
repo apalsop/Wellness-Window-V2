@@ -20,7 +20,7 @@ export const windows: WindowItem[] = [
   // 1. Sydney Harbour
   { id: "sydney-harbour", title: "Sydney Harbour", subtitle: "Sydney, Australia", videoId: "5uZa3-RMFos" },
   // 2. Brisbane Weather
-  { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "o1LRcS28T2M" },
+  { id: "brisbane", title: "Brisbane Weather", subtitle: "Brisbane, Australia", videoId: "pIaqtdmfbZ4" },
   // 3. Bonny Hills Beach House NSW
   { id: "bonny-hills", title: "Bonny Hills Beach House", subtitle: "NSW, Australia", videoId: "D_9QJlYvotE" },
   // 4. Southbank Melbourne
