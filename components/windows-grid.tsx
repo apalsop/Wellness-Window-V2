@@ -109,8 +109,8 @@ export const windows: WindowItem[] = [
   { id: "furball-farm", title: "Furball Farm Cat Sanctuary", subtitle: "Minnesota, USA", videoId: "z-l7TsnWkek" },
   // 36. Namibia Waterhole
   { id: "namibia", title: "Namibia Waterhole", subtitle: "Wildlife Watch - Africa", videoId: "ydYDqZQpim8" },
-  // 37. Anacapa Island Cove
-  { id: "anacapa", title: "Anacapa Island Cove", subtitle: "Channel Islands National Park", videoId: "fVa6-zCBR7A" },
+  // 37. Monterey Bay Cam
+  { id: "anacapa", title: "Monterey Bay Cam", subtitle: "Monterey Bay Aquarium", videoId: "fVa6-zCBR7A" },
   // 38. Coral City Camera
   { id: "coral-city", title: "Coral City Camera", subtitle: "Miami Underwater Reef", videoId: "7i8ARjIeM2k" },
   // 39. Underwater Reef Cam
