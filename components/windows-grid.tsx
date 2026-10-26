@@ -106,7 +106,7 @@ export const windows: WindowItem[] = [
   // 34. Awaji Island Monkey Center
   { id: "awaji-monkey", title: "Awaji Island Monkey Center", subtitle: "Awaji Island, Japan", videoId: "lsxYH2XQQCg" },
   // 35. Furball Farm Cat Sanctuary
-  { id: "furball-farm", title: "Furball Farm Cat Sanctuary", subtitle: "Minnesota, USA", videoId: "e9C9K8ltDfk" },
+  { id: "furball-farm", title: "Furball Farm Cat Sanctuary", subtitle: "Minnesota, USA", videoId: "z-l7TsnWkek" },
   // 36. Namibia Waterhole
   { id: "namibia", title: "Namibia Waterhole", subtitle: "Wildlife Watch - Africa", videoId: "ydYDqZQpim8" },
   // 37. Anacapa Island Cove
