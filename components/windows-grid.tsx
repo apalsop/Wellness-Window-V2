@@ -70,11 +70,13 @@ export const windows: WindowItem[] = [
   // 21. Sint Maarten, Philipsburg
   { id: "sint-maarten", title: "Sint Maarten", subtitle: "Philipsburg, Caribbean", videoId: "N5Mb2bjYwZo" },
   // 22. Tamariu, Spain
-  { id: "tamariu", title: "Tamariu", subtitle: "Costa Brava, Spain", videoId: "PMhVgTcDd1o" },
-  // 23. Sitka, Alaska
+  { id: "tamariu", title: "Tamariu", subtitle: "Costa Brava, Spain", videoId: "wiVzU1mcCTA" },
+  // 23. Tossa de Mar, Girona
+  { id: "tossa-de-mar", title: "Tossa de Mar", subtitle: "Girona, Spain", videoId: "nWFcWooDAxI" },
+  // 24. Sitka, Alaska
   { id: "sitka", title: "Sitka, Alaska", subtitle: "Alaska, USA", videoId: "sF5hFDGN20Y" },
   
-  // === VOLCANOES, NATURE & WILDLIFE (24-30) ===
+  // === VOLCANOES, NATURE & WILDLIFE (25-31) ===
   // 24. Yellowstone National Park
   { id: "yellowstone", title: "Yellowstone National Park", subtitle: "Old Faithful Geyser", videoId: "mWUklUMSXZE" },
   // 25. Brooks Falls
@@ -90,7 +92,7 @@ export const windows: WindowItem[] = [
   // 29. Kilauea Volcano Hawaii
   { id: "kilauea", title: "Kilauea Volcano", subtitle: "Hawaii, USA", videoId: "6IaMqotNF_s" },
   
-  // === NORTHERN LIGHTS & SPACE (30-33) ===
+  // === NORTHERN LIGHTS & SPACE (31-34) ===
   // 30. Aurora Borealis
   { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "jHfZ4ZYsaOA" },
   // 31. Northern Lights Fairbanks Alaska
@@ -100,7 +102,7 @@ export const windows: WindowItem[] = [
   // 33. Earth from the International Space Station
   { id: "iss-live", title: "Earth from ISS", subtitle: "International Space Station", videoId: "OKQEMp2555A" },
   
-  // === WILDLIFE (34-41) ===
+  // === WILDLIFE (35-42) ===
   // 34. Awaji Island Monkey Center
   { id: "awaji-monkey", title: "Awaji Island Monkey Center", subtitle: "Awaji Island, Japan", videoId: "lsxYH2XQQCg" },
   // 35. Furball Farm Cat Sanctuary
@@ -118,7 +120,7 @@ export const windows: WindowItem[] = [
   // 41. Watering Hole
   { id: "kenya-waterhole", title: "Watering Hole", subtitle: "Kenya - MPALA", videoId: "oORXfTviuCs" },
   
-  // === AMBIENT VIDEOS (42-44) ===
+  // === AMBIENT VIDEOS (43-45) ===
   // 42. Cozy Fireplace
   { id: "fireplace", title: "Cozy Fireplace", subtitle: "10 Hours Full HD", videoId: "L_LUpnjgPso" },
   // 43. Woodland Ambience
@@ -126,7 +128,7 @@ export const windows: WindowItem[] = [
   // 44. Redwood Forest
   { id: "redwood", title: "Redwood Forest", subtitle: "California Stream Ambience", videoId: "_1nnhg3JpwM" },
   
-  // === EXTERNAL LINKS (45-48) ===
+  // === EXTERNAL LINKS (46-49) ===
   // 45. Random Window Swap
   { id: "window-swap", title: "Random Window Swap", subtitle: "Global Community Portal", externalUrl: "https://window-swap.com/", thumbnailUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=320&h=180&fit=crop" },
   // 46. City Drive & Radio
@@ -137,8 +139,8 @@ export const windows: WindowItem[] = [
   { id: "flyover", title: "Airplane City Flyover", subtitle: "Easygoing Expedition", externalUrl: "https://virtualvacation.us/fly", thumbnailUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=320&h=180&fit=crop" },
 ]
 
-// Live streams for kiosk mode (first 43 windows - all live webcams/streams, excluding ambient videos and external links)
-export const liveStreamWindows = windows.slice(0, 43)
+// Live streams for kiosk mode (first 44 windows - all live webcams/streams, excluding ambient videos and external links)
+export const liveStreamWindows = windows.slice(0, 44)
 
 // Get YouTube thumbnail URL
 function getThumbnailUrl(window: WindowItem): string {
