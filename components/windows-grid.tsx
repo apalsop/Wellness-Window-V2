@@ -94,7 +94,7 @@ export const windows: WindowItem[] = [
   
   // === NORTHERN LIGHTS & SPACE (31-34) ===
   // 30. Aurora Borealis
-  { id: "aurora", title: "Aurora Borealis", subtitle: "Utsjoki, Finland", videoId: "jHfZ4ZYsaOA" },
+  { id: "aurora", title: "Northern Light Live", subtitle: "Sodankylä, Finland", videoId: "dnlQtDad6Dk" },
   // 31. Northern Lights Fairbanks Alaska
   { id: "fairbanks-aurora", title: "Northern Lights Fairbanks", subtitle: "Alaska, USA", videoId: "O52zDyxg5QI" },
   // 32. Earth from Space
